@@ -358,11 +358,11 @@ function install_mr() {
     install_epson_business_inkjet
 
     # install and configure ssh mounts
-    script install.mrshare.sh
+    wget http://dl.panticz.de/mr/install.mrshare.sh -O - | sudo bash -
 
     # configure database source
-    wget http://www.panticz.de/sites/default/files/DataAccess.xcu_.diff -P /tmp/
-    patch -p2 /usr/lib/openoffice/share/registry/data/org/openoffice/Office/DataAccess.xcu < /tmp/DataAccess.xcu_.diff
+    wget http://dl.panticz.de/mr/DataAccess.xcu.diff -O /tmp/DataAccess.xcu.diff
+    patch -p2 /usr/lib/openoffice/share/registry/data/org/openoffice/Office/DataAccess.xcu < /tmp/DataAccess.xcu.diff
 
     # install nfs
     sudo apt-get install -y nfs-common
