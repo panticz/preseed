@@ -168,7 +168,7 @@ function install_Laser() {
     rm -r /tmp/PPD*_KSL_8.4
 }
 
-function install_EpsonColor() {
+function install_epson_business_inkjet() {
     wget https://raw.github.com/panticz/installit/master/install.epson-business-inkjet.sh -O - | bash -
     sudo lpadmin -p EpsonOben -v socket://EpsonOben:2501 -E -P /usr/share/cups/model/ekb500dn.ppd
     # -o DefaultInputSlot=Front
@@ -355,7 +355,7 @@ function install_mr() {
     apt-get install -y openoffice.org-java-common openoffice.org-base openoffice.org-officebean
 #err?    install_yajhfc
     install_Laser
-#err?    install_EpsonColor
+    install_epson_business_inkjet
 
     # install and configure ssh mounts
     script install.mrshare.sh
