@@ -2,7 +2,7 @@ Installation chart
 =======
 
 * iPXE boot
-* http://preseed.panticz.de/ipxe/ipxe.menu.install
+* https://raw.github.com/panticz/preseed/master/ipxe/ipxe.menu.install
    * |
    * | Default Ubuntu preseed
    * |--- http://preseed.panticz.de/ubuntu-preseed.seed
