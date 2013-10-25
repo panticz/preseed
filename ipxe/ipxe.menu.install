@@ -1,5 +1,8 @@
 #!ipxe
 
+# for http download (without SSL) use:
+# http://preseed.panticz.de/ipxe/ipxe.menu.install
+
 # choose cpu architecture
 cpuid --ext 29 && set arch amd64 || set arch i386
 
