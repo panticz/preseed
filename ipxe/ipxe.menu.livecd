@@ -1,0 +1,69 @@
+#!ipxe
+
+menu LiveCD
+item --gap Ubuntu:
+item live_ubuntu_13.04  Ubuntu Raring 13.04 LiveCD
+item live_ubuntu_12.10  Ubuntu Quantal 12.10 LiveCD
+item live_ubuntu_12.04  Ubuntu Precise 12.04 LiveCD
+item
+item --gap Fedora:
+item live_fedora_18     Fedora 18 LiveCD (BROKEN)
+item
+item --gap other OS:
+item tinycorelinux      Tiny Core Linux
+item grml_32_small      Grml 32 2013.02 small LiveCD
+item freedos            FreeDOS 1.1 Base
+item
+item back   < Back to main menu
+choose target && goto ${target}
+
+:back
+chain ${mainmenu}
+
+
+#
+# Ubuntu
+#
+:live_ubuntu_13.04
+initrd tftp://${next-server}/live/ubuntu/13.04/casper/initrd.lz
+chain tftp://${next-server}/live/ubuntu/13.04/casper/vmlinuz boot=casper netboot=nfs nfsroot=${next-server}:/var/lib/tftpboot/live/ubuntu/13.04 BOOTIF=01-${net0/mac:hexhyp}
+
+:live_ubuntu_12.10
+initrd tftp://${next-server}/live/ubuntu/12.10/casper/initrd.lz
+chain tftp://${next-server}/live/ubuntu/12.10/casper/vmlinuz boot=casper netboot=nfs nfsroot=${next-server}:/var/lib/tftpboot/live/ubuntu/12.10 BOOTIF=01-${net0/mac:hexhyp}
+
+:live_ubuntu_12.04
+initrd tftp://${next-server}/live/ubuntu/12.04/casper/initrd.lz
+chain tftp://${next-server}/live/ubuntu/12.04/casper/vmlinuz boot=casper netboot=nfs nfsroot=${next-server}:/var/lib/tftpboot/live/ubuntu/12.04 BOOTIF=01-${net0/mac:hexhyp}
+
+
+#
+# Fedora
+#
+:live_fedora_18
+initrd tftp://${next-server}/live/fedora/18/initrd0.img
+chain tftp://${next-server}/live/fedora/18/vmlinuz0 rootflags=loop root=live:/Fedora-18-i686-Live-Desktop.iso rootfstype=auto ro liveimg rhgb rd.luks=0 rd.md=0 rd.dm=0
+
+:live_fedora_18_test_1
+initrd tftp://${next-server}/live/fedora/18/initrd0.img
+chain tftp://${next-server}/live/fedora/18/vmlinuz0 netboot=nfs root=/dev/nfs root=live:nfs://${next-server}:/var/lib/tftpboot/live/fedora/18/squashfs.img
+
+:live_fedora_18_test_2
+initrd tftp://${next-server}/live/fedora/18/initrd0.img
+chain tftp://${next-server}/live/fedora/18/vmlinuz0 inst.repo=nfs:${next-server}:/var/lib/tftpboot/live/fedora/18/Fedora-18-i686-Live-Desktop.iso rootfstype=auto ro liveimg rhgb rd.luks=0 rd.md=0 rd.dm=0 rootflags=loop
+
+
+#
+# other
+#
+:tinycorelinux
+initrd http://distro.ibiblio.org/tinycorelinux/4.x/x86/release/distribution_files/core.gz
+chain http://distro.ibiblio.org/tinycorelinux/4.x/x86/release/distribution_files/vmlinuz
+
+:grml_32_small
+initrd tftp://${next-server}/live/grml/32-small/initrd.img
+chain tftp://${next-server}/live/grml/32-small/vmlinuz root=/dev/nfs rw nfsroot=${next-server}:/var/lib/tftpboot/live/grml/32-small live-media-path=/ boot=live lang=us nomce apm=power-off noprompt noeject vga=791
+
+:freedos
+imgfetch http://www.freedos.org/download/download/fd11src.iso
+chain http://preseed.panticz.de/ipxe/memdisk iso
