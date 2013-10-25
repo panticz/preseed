@@ -1,5 +1,8 @@
 #!ipxe
 
+# for http download (without SSL) use:
+# http://preseed.panticz.de/ipxe/ipxe.menu.livecd
+
 menu LiveCD
 item --gap Ubuntu:
 item live_ubuntu_13.10  Ubuntu Saucy 13.10 LiveCD
