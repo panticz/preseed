@@ -1,0 +1,121 @@
+#!ipxe
+
+# choose cpu architecture
+cpuid --ext 29 && set arch amd64 || set arch i386
+
+menu NetInstall
+item --gap NetInstall Ubuntu:
+item install_ubuntu_13.10           Ubuntu 13.10 Saucy (preseed, user: service, pass: t00r)
+item install_ubuntu_13.04           Ubuntu 13.04 Raring (preseed, user: service, pass: t00r)
+item install_ubuntu_12.10           Ubuntu 12.10 Quantal (preseed, user: service, pass: t00r)
+item install_ubuntu_12.04           Ubuntu 12.04.3 Precise LTS (preseed, user: service, pass: t00r)
+item install_ubuntu_12.04_nonpae    Ubuntu 12.04.3 Precise Non-PAE (preseed, user: service, pass: t00r)
+item
+item --gap NetInstall Debian:
+item install_debian_7               Debian 7 Wheezy (preseed, user: root, pass: t00r)
+item install_debian_7_autopart      Debian 7 Wheezy (preseed, autopart, user: root, pass: t00r)
+item install_debian_6               Debian 6 Squeeze (preseed, user: root, pass: t00r)
+item install_debian_6_autopart      Debian 6 Squeeze (preseed, autopart, user: root, pass: t00r)
+item
+item --gap NetInstall Fedora:  
+item install_fedora_18              Fedora 18
+item install_fedora_19              Fedora 19
+item
+item --gap NetInstall CentOS:  
+item install_centos_6.4             CentOS 6.4 (kickstart)
+item
+item --gap Other
+item install_ipfire                 IpFire
+item back   < Back to main menu
+choose target && goto ${target}
+
+:back
+chain ${mainmenu}
+
+
+#
+# Ubuntu
+#
+:install_ubuntu_13.10
+set release saucy
+goto install_ubuntu
+
+:install_ubuntu_13.04
+set release raring
+goto install_ubuntu
+
+:install_ubuntu_12.10
+set release quantal
+goto install_ubuntu
+
+:install_ubuntu_12.04
+set release precise
+goto install_ubuntu
+
+:install_ubuntu_12.04_nonpae
+set release precise
+set nonpae non-pae/
+set arch i386
+goto install_ubuntu
+
+:install_ubuntu
+initrd http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/initrd.gz
+chain http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/ubuntu-preseed.seed auto priority=critical interface=auto locale=en_US.UTF-8 console-setup/layoutcode=en_US
+
+
+#
+# Debian
+#
+:install_debian_6_autopart
+set autopart autopart
+goto install_debian_6
+
+:install_debian_6
+set release squeeze
+goto install_debian
+
+:install_debian_7_autopart
+set autopart autopart
+goto install_debian_7
+
+:install_debian_7
+set release wheezy
+goto install_debian
+
+:install_debian
+initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
+chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/debian-preseed.seed auto priority=critical interface=auto locale=en_US.UTF-8 console-setup/layoutcode=en_US keyboard-configuration/xkb-keymap=en ${autopart}
+
+
+#
+# Fedora
+#
+# TODO: auto 32/64 bit
+:install_fedora_18
+set release 18
+goto install_fedora
+
+:install_fedora_19
+set release 19
+goto install_fedora
+
+:install_fedora
+initrd http://ftp.uni-kl.de/pub/linux/fedora/linux/releases/${release}/Fedora/x86_64/os/images/pxeboot/initrd.img
+chain http://ftp.uni-kl.de/pub/linux/fedora/linux/releases/${release}/Fedora/x86_64/os/images/pxeboot/vmlinuz inst.repo=http://ftp.uni-kl.de/pub/linux/fedora/linux/releases/${release}/Fedora/x86_64/os/
+
+
+
+#
+# CentOS
+#
+# TODO: auto 32/64 bit
+:install_centos_6.4
+initrd http://mirror.netcologne.de/centos/6/os/x86_64/isolinux/initrd.img
+chain http://mirror.netcologne.de/centos/6/os/x86_64/isolinux/vmlinuz ksdevice=link ks=http://preseed.panticz.de/kickstart/centos6-min.cfg
+
+
+#
+# IpFire
+#
+:install_ipfire
+chain http://boot.ipfire.org/menu.gpxe
