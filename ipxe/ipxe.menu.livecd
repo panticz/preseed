@@ -2,6 +2,7 @@
 
 menu LiveCD
 item --gap Ubuntu:
+item live_ubuntu_13.10  Ubuntu Saucy 13.10 LiveCD
 item live_ubuntu_13.04  Ubuntu Raring 13.04 LiveCD
 item live_ubuntu_12.10  Ubuntu Quantal 12.10 LiveCD
 item live_ubuntu_12.04  Ubuntu Precise 12.04 LiveCD
@@ -24,6 +25,10 @@ chain ${mainmenu}
 #
 # Ubuntu
 #
+:live_ubuntu_13.10
+initrd tftp://${next-server}/live/ubuntu/13.10/casper/initrd.lz
+chain tftp://${next-server}/live/ubuntu/13.10/casper/vmlinuz boot=casper netboot=nfs nfsroot=${next-server}:/var/lib/tftpboot/live/ubuntu/13.10 BOOTIF=01-${net0/mac:hexhyp}
+
 :live_ubuntu_13.04
 initrd tftp://${next-server}/live/ubuntu/13.04/casper/initrd.lz
 chain tftp://${next-server}/live/ubuntu/13.04/casper/vmlinuz boot=casper netboot=nfs nfsroot=${next-server}:/var/lib/tftpboot/live/ubuntu/13.04 BOOTIF=01-${net0/mac:hexhyp}
