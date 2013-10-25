@@ -379,7 +379,7 @@ function install_mr() {
     cat /etc/modules | grep nfs || echo nfs >> /etc/modules
 
     # create gnome menu
-    wget http://www.panticz.de/sites/default/files/mr/ritter.gnome.menu.sh -O - | sudo bash -
+    wget http://dl.panticz.de/mr/ritter.gnome.menu.sh -O - | sudo bash -
 }
 
 # ubuntu tuneup
