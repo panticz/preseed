@@ -1,0 +1,65 @@
+#!ipxe
+
+set mainmenu http://preseed.panticz.de/menu.ipxe
+
+# choose boot image
+menu Please choose an operating system to boot
+item
+item --gap URL: ${mainmenu}
+item --gap MAC: ${mac}
+item
+item localboot  Boot from first harddisk
+item
+item --gap Images:
+item livecd     + LiveCD...
+item install    + NetInstal...
+item memtest    Memtest86+
+item hdt        Hardware Detection Tool
+item live       Tiny Core Linux
+item intelflash Intel BootUtil
+item dosboot    dosboot
+item
+item config     iPXE config menu
+choose --default exit --timeout 10000 target && goto ${target}
+
+:config
+config
+
+:livecd
+chain http://preseed.panticz.de/ipxe/menu.livecd.ipxe
+
+:install
+chain http://preseed.panticz.de/ipxe/menu.netinstall.ipxe
+
+:localboot
+sanboot --no-describe --drive 0x80
+
+:memtest
+set 209:string ipxe/memtest/mt_420.conf
+set 210:string http://preseed.panticz.de/
+chain ipxe/pxelinux.0
+#old
+#imgfetch http://www.memtest.org/download/beta/500rc1/mt500rc1.iso
+#chain http://preseed.panticz.de/ipxe/memdisk iso
+
+:hdt
+set 209:string ipxe/hdt/hdt_052.conf
+set 210:string http://preseed.panticz.de/
+chain ipxe/pxelinux.0
+#imgfetch http://www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/hdt-0.5.2.img.gz
+#chain http://preseed.panticz.de/ipxe/memdisk
+
+:intelflash
+imgfetch http://preseed.panticz.de/ipxe/intelflash.img
+chain http://preseed.panticz.de/ipxe/memdisk
+
+:dosboot
+imgfetch http://preseed.panticz.de/ipxe/dosboot.img
+chain http://preseed.panticz.de/ipxe/memdisk
+
+:live
+#imgfetch http://ftp-stud.hs-esslingen.de/pub/Mirrors/releases.ubuntu.com/12.10/ubuntu-12.10-desktop-amd64.iso
+# chain http://preseed.panticz.de/ipxe/memdisk iso
+initrd http://distro.ibiblio.org/tinycorelinux/4.x/x86/release/distribution_files/core.gz
+chain http://distro.ibiblio.org/tinycorelinux/4.x/x86/release/distribution_files/vmlinuz
+boot
