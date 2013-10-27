@@ -1,0 +1,81 @@
+# Localization
+d-i debian-installer/locale string de_DE
+d-i console-setup/layoutcode string de
+
+# Network configuration
+d-i netcfg/choose_interface select auto
+
+# Clock and time zone setup
+d-i clock-setup/ntp boolean true
+d-i time/zone string Europe/Berlin
+
+### Mirror settings
+d-i mirror/country string manual
+d-i mirror/http/hostname string de.archive.ubuntu.com
+d-i mirror/http/directory string /ubuntu
+d-i mirror/http/proxy string
+
+d-i debconf/priority select critical
+d-i auto-install/enabled boolean true
+
+# Account setup
+d-i passwd/user-fullname string ubuntu
+d-i passwd/username string ubuntu
+d-i passwd/user-password password t00r
+d-i passwd/user-password-again password t00r
+d-i user-setup/allow-password-weak boolean true
+
+# Apt setup
+d-i apt-setup/restricted boolean true
+d-i apt-setup/universe boolean true
+d-i apt-setup/multiverse boolean true
+d-i apt-setup/backports boolean true
+d-i apt-setup/non-free boolean true
+d-i apt-setup/contrib boolean true
+d-i apt-setup/security-updates boolean true
+d-i apt-setup/partner boolean true
+
+# Package selection
+tasksel tasksel/first multiselect ubuntu-standard
+d-i pkgsel/update-policy select unattended-upgrades
+
+# proxy
+d-i preseed/early_command string \
+    ping -c 1 apt-cacher > /dev/null \
+    if [ $? -eq 0 ]; then \
+        debconf-set mirror/http/proxy "http://apt-cacher:3142/" \
+    fi
+
+# partman
+d-i partman/early_command string \
+    if [ $(cat /proc/cmdline | grep autopart | wc -l) -eq 1 ]; then \
+        DISCS=$(list-devices disk | wc -l) ;\
+        if [ ${DISCS} -eq 2 ]; then \
+            echo "raid1" >> /tmp/debug ;\
+            wget http://preseed.panticz.de/raid1lvm.cfg -O /tmp/partman.cfg ;\
+            debconf-set-selections /tmp/partman.cfg ;\
+        else \
+            echo "regular" >> /tmp/debug ;\
+            wget http://preseed.panticz.de/regular.cfg -O /tmp/partman.cfg ;\
+            debconf-set-selections /tmp/partman.cfg ;\
+        fi \
+    fi
+
+# Run
+###d-i preseed/run string run.sh
+
+# Custom commands
+d-i preseed/include_command string \
+MAC=$(ip link | sed -n "/BROADCAST.*UP/{n;p}" | tail -1 | tr -s " " | cut -d" " -f3); \
+HOST=$(echo ${MAC} | md5sum | cut -d" " -f1); \
+wget http://preseed.panticz.de/${HOST}.seed -P /tmp > /dev/null; \
+if [ $? -eq 0 ]; then echo http://preseed.panticz.de/${HOST}.seed; fi
+
+#d-i preseed/late_command string \
+#in-target wget http://preseed.panticz.de/late_command.conf -O /etc/init/late_command.conf
+
+d-i preseed/late_command string \
+in-target wget https://raw.github.com/panticz/preseed/master/late_command.conf -O /etc/init/late_command.conf
+
+# Finishing up the installation
+d-i finish-install/reboot_in_progress note
