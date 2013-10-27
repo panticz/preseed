@@ -13,7 +13,7 @@ Installation chart
    * https://raw.github.com/panticz/preseed/master/ipxe/menu.netinstall.ipxe
       * |
       * | Default Ubuntu preseed
-      * |--- http://preseed.panticz.de/ubuntu-preseed.seed
+      * |--- https://raw.github.com/panticz/preseed/master/ubuntu-minimal.seed
          * |
          * | Automatic partitioning, if enabled (RAID1, LVM, ...)
          * |--- [ http://preseed.panticz.de/regular.cfg ] or [ http://preseed.panticz.de/raid1lvm.cfg ]
