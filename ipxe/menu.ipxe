@@ -1,5 +1,8 @@
 #!ipxe
 
+# To access this file via http use following redirection:
+# http://preseed.panticz.de/ipxe/menu.ipxe
+
 set mainmenu http://preseed.panticz.de/menu.ipxe
 
 # choose boot image
