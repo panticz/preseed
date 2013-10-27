@@ -1,7 +1,7 @@
 #!ipxe
 
-# for http download (without SSL) use:
-# http://preseed.panticz.de/ipxe/ipxe.menu.livecd
+# To access this file via http use following redirection:
+# http://preseed.panticz.de/ipxe/menu.livecd.ipxe
 
 menu LiveCD
 item --gap Ubuntu:
