@@ -1,7 +1,11 @@
 Installation chart
 =======
 
-* NET iPXE boot / USB boot / CD boot
+* NET PXE boot (http://dl.panticz.de/ipxe/ipxe.pxe)
+* USB boot (http://dl.panticz.de/ipxe/ipxe.usb)
+* CD boot (http://dl.panticz.de/ipxe/ipxe.iso)
+* |
+* iPXE boot
 * http://preseed.panticz.de/< MAC_ADDRESS >
 * |
 * https://raw.github.com/panticz/preseed/master/ipxe/menu.ipxe
