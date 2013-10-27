@@ -1,7 +1,7 @@
 #!ipxe
 
-# for http download (without SSL) use:
-# http://preseed.panticz.de/ipxe/ipxe.menu.install
+# To access this file via http use following redirection:
+# http://preseed.panticz.de/ipxe/menu.netinstall.ipxe
 
 # choose cpu architecture
 cpuid --ext 29 && set arch amd64 || set arch i386
