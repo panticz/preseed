@@ -10,18 +10,19 @@ Installation chart
    * |
    * https://raw.github.com/panticz/preseed/master/ipxe/menu.netinstall.ipxe
       * |
-      * | Default Ubuntu preseed
+      * | Minimal Ubuntu preseed configuration  
       * |--- https://raw.github.com/panticz/preseed/master/ubuntu-minimal.seed
          * |
          * | Automatic partitioning, if enabled (RAID1, LVM, ...)
-         * |--- [ http://preseed.panticz.de/regular.cfg ] or [ http://preseed.panticz.de/raid1lvm.cfg ]
+         * |--- [ https://raw.github.com/panticz/preseed/master/regular.seed ]
+         * |--- [ https://raw.github.com/panticz/preseed/master/raid1lvm.seed ]
          * |
-         * | Client specific configuration (partitioning, languages, user, ...)
+         * | Additional client specific configuration (partitioning, languages, user, ...)
          * |--- http://preseed.panticz.de/< MAC_HASH >.seed
          * |
          * |--- REBOOT
          * |
-         * | Client post installation init script (init script)
+         * | Additional client specific post installation (init script)
          * |--- https://raw.github.com/panticz/preseed/master/late_command.conf
             * |
             * | Post installation script (applications, hardware configuration, ...)
