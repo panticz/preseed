@@ -283,7 +283,7 @@ function install_desktop_extras() {
     install_firefox
 # dep # install_java-jre
     install_libreoffice
-    install_teamviewer
+# broken    install_teamviewer
     apt-get install -y p7zip
 
     install linux-firmware-nonfree
@@ -355,7 +355,7 @@ function install_mr() {
     apt-get install -y openoffice.org-java-common openoffice.org-base openoffice.org-officebean
 #err?    install_yajhfc
     install_Laser
-    install_epson_business_inkjet
+# broken    install_epson_business_inkjet
 
     # install and configure ssh mounts
     wget -q http://dl.panticz.de/mr/install.mrshare.sh -O - | sudo bash -
