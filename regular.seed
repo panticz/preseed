@@ -1,3 +1,6 @@
+# To access this file via http use following redirection:
+# http://preseed.panticz.de/seed/regular.seed
+
 d-i partman-auto/method string regular
 d-i partman/choose_partition select Finish partitioning and write changes to disk
 d-i partman/confirm_write_new_label boolean true
