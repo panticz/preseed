@@ -63,7 +63,7 @@ goto install_ubuntu
 
 :install_ubuntu
 initrd http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/initrd.gz
-chain http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/seed/ubuntu-minimal.seed auto priority=critical interface=auto locale=en_US.UTF-8 console-setup/layoutcode=en_US
+chain http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto priority=critical interface=auto locale=en_US.UTF-8 console-setup/layoutcode=en_US
 
 
 #
