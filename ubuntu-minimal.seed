@@ -1,5 +1,5 @@
 # To access this file via http use following redirection:
-# http://preseed.panticz.de/seed/ubuntu-minimal.seed
+# http://preseed.panticz.de/preseed/ubuntu-minimal.seed
 
 # Localization
 d-i debian-installer/locale string de_DE
