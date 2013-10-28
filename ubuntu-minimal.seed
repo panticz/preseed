@@ -55,11 +55,11 @@ d-i partman/early_command string \
         DISCS=$(list-devices disk | wc -l) ;\
         if [ ${DISCS} -eq 2 ]; then \
             echo "raid1" >> /tmp/debug ;\
-            wget https://raw.github.com/panticz/preseed/master/raid1lvm.seed -O /tmp/partman.cfg ;\
+            wget http://preseed.panticz.de/seed/raid1lvm.seed -O /tmp/partman.cfg ;\
             debconf-set-selections /tmp/partman.cfg ;\
         else \
             echo "regular" >> /tmp/debug ;\
-            wget https://raw.github.com/panticz/preseed/master/regular.seed -O /tmp/partman.cfg ;\
+            wget http://preseed.panticz.de/seed/regular.seed -O /tmp/partman.cfg ;\
             debconf-set-selections /tmp/partman.cfg ;\
         fi \
     fi
