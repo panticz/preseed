@@ -130,6 +130,12 @@ function install_icinga() {
     script4 install.icinga.sh
 }
 
+function install_puppet_client() {
+    script4 install.puppet-client.sh
+}
+
+
+
 #
 # DEVELOPMENT
 #
