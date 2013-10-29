@@ -5,7 +5,7 @@ Installation chart
 * USB boot (http://dl.panticz.de/ipxe/ipxe.usb)
 * CD boot (http://dl.panticz.de/ipxe/ipxe.iso)
   * |
-  * iPXE boot
+  * iPXE boot (Compile iPXE: https://github.com/panticz/preseed/blob/master/ipxe/scripts/build_ipxe.sh)
   * http://preseed.panticz.de/< MAC_ADDRESS >
    * |
    * https://raw.github.com/panticz/preseed/master/ipxe/menu.netinstall.ipxe
