@@ -126,6 +126,9 @@ function install_acroread() {
     script4 install.acroread.sh
 }
 
+function install_icinga() {
+    script4 install.icinga.sh
+}
 
 #
 # DEVELOPMENT
