@@ -622,8 +622,8 @@ function enable_auto_update() {
     echo 'APT::Periodic::Unattended-Upgrade "1";' >> /etc/apt/apt.conf.d/10periodic
 }
 
-function install_ipmi() {
-    script2 install.ipmi.sh
+function install_ipmitool() {
+    script4 install.ipmitool.sh
 }
 
 function install_cpuburn() {
@@ -645,7 +645,7 @@ function install_powermeter() {
     #cpufreqd
     #sysfsutils
 
-    install_ipmi
+    install_ipmitool
     install_cpuburn
     install_cpuload
 
