@@ -3,7 +3,6 @@
 
 # Localization
 d-i debian-installer/locale string en_US.UTF-8
-d-i console-setup/layoutcode string de
 
 # Network configuration
 d-i netcfg/choose_interface select auto
