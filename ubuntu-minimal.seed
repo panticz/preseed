@@ -2,7 +2,7 @@
 # http://preseed.panticz.de/preseed/ubuntu-minimal.seed
 
 # Localization
-d-i debian-installer/locale string de_DE
+d-i debian-installer/locale string en_US.UTF-8
 d-i console-setup/layoutcode string de
 
 # Network configuration
