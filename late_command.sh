@@ -292,7 +292,7 @@ function install_desktop_extras() {
     install_firefox
 # dep # install_java-jre
     install_libreoffice
-# broken    install_teamviewer
+    install_teamviewer
     apt-get install -y p7zip
 
     install linux-firmware-nonfree
