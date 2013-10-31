@@ -627,7 +627,7 @@ function install_ipmitool() {
 }
 
 function install_cpuburn() {
-    script2 install.cpuburn.sh
+    script4 install.cpuburn.sh
 }
 
 function install_cpuload() {
