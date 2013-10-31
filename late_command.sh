@@ -364,7 +364,6 @@ function install_mr() {
     apt-get install -y openoffice.org-java-common openoffice.org-base openoffice.org-officebean
 #err?    install_yajhfc
     install_Laser
-# broken    install_epson_business_inkjet
 
     # install and configure ssh mounts
     wget -q http://dl.panticz.de/mr/install.mrshare.sh -O - | sudo bash -
