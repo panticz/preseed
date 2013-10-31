@@ -630,10 +630,6 @@ function install_cpuburn() {
     script4 install.cpuburn.sh
 }
 
-function install_cpuload() {
-    script2 install.cpuload.sh
-}
-
 function install_powermeter() {
     install_gnome_desktop
     install openssh-server
@@ -647,8 +643,10 @@ function install_powermeter() {
 
     install_ipmitool
     install_cpuburn
-    install_cpuload
-
+    
+    # configure xdm cpuload
+    wget -q http://dl.panticz.de/sts/install.powermeter.cpuload.sh -O - | sudo bash -
+    
     #gnome_autologin
 }
 
