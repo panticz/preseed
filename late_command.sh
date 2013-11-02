@@ -185,7 +185,7 @@ function install_epson_business_inkjet() {
 }
         
 function install_Kyocera_FS-1010() {
-    wget http://dl.dropbox.com/u/4170695/www/Kyocera-FS-1010.ppd -P /tmp
+    wget http://dl.panticz.de/hardware/kyocera_fs-1010/Kyocera-FS-1010.ppd -P /tmp
     lpadmin -p Kyocera-FS-1010 -v socket://192.168.1.11:9100 -E -P /tmp/Kyocera-FS-1010.ppd
 }
 
