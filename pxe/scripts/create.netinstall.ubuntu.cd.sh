@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIST=quantal
+DIST=saucy
 
 mkdir /tmp/iso
 
