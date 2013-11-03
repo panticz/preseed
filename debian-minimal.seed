@@ -53,11 +53,11 @@ d-i partman/early_command string \
         DISCS=$(list-devices disk | wc -l) ;\
         if [ ${DISCS} -eq 2 ]; then \
             echo "raid1" >> /tmp/debug ;\
-            wget http://preseed.panticz.de/raid1lvm.cfg -O /tmp/partman.cfg ;\
+            wget http://preseed.panticz.de/preseed/raid1lvm.seed -O /tmp/partman.cfg ;\
             debconf-set-selections /tmp/partman.cfg ;\
         else \
             echo "regular" >> /tmp/debug ;\
-            wget http://preseed.panticz.de/regular.cfg -O /tmp/partman.cfg ;\
+            wget http://preseed.panticz.de/preseed/regular.seed -O /tmp/partman.cfg ;\
             debconf-set-selections /tmp/partman.cfg ;\
         fi \
     fi
@@ -74,7 +74,7 @@ d-i preseed/include_command string \
 
 d-i preseed/late_command string \
    in-target mv /etc/rc.local /etc/rc.local.org && \
-   in-target wget http://preseed.panticz.de/rc.local -O /etc/rc.local && \
+   in-target wget https://raw.github.com/panticz/preseed/master/late_command.rc -O /etc/rc.local && \
    in-target chmod a+x /etc/rc.local
 
 # Finishing up the installation
