@@ -29,16 +29,6 @@ function script() {
     fi
 }
 
-function script2() {
-    if [ ! -z ${1} ]; then 
-        URL=http://www.panticz.de/sites/default/files/scripts/${1}
-
-        wget -nv ${URL} -O /tmp/${1}
-        chmod +x /tmp/${1}
-        /tmp/${1} ${2} 2>&1 | tee -a ${LOG}
-    fi
-}
-
 function script3() {
     if [ ! -z ${1} ]; then
         URL=http://installit.googlecode.com/hg/${1}
