@@ -2,4 +2,4 @@
 
 echo "update.ubuntu.pxe.files.cronjob $(date -I)" > /var/log/update.ubuntu.pxe.files.log
 
-wget --quiet https://raw.github.com/panticz/preseed/master/scripts/update.ubuntu.pxe.files.sh -O - | bash -
+wget --quiet https://raw.github.com/panticz/preseed/master/pxe/scripts/update.ubuntu.pxe.files.sh -O - | bash -
