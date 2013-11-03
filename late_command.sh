@@ -460,7 +460,7 @@ function gnome_tuneup() {
 # install
 function install_forms() {
     install_wine
-    script install.forms.sh $1
+    wget -q http://dl.panticz.de/mr/install.forms.sh -O - | sudo bash -s $1
 }
 
 function installUmtsmon() {
