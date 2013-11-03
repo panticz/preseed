@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+# wait util network comes up
+sleep 10
+
+wget -q https://raw.github.com/panticz/preseed/master/late_command.sh -O /tmp/late_command.sh && \
+mv /etc/rc.local.org /etc/rc.local && \
+bash /tmp/late_command.sh
+
+exit 0
