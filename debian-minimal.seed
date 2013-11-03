@@ -34,7 +34,7 @@ d-i apt-setup/contrib boolean true
 d-i apt-setup/security-updates boolean true
 d-i apt-setup/partner boolean true
 
-d-i	hw-detect/load-firmware	boolean	true
+d-i hw-detect/load-firmware	boolean	true
 
 # Package selection
 tasksel tasksel/first multiselect ssh-server
