@@ -6,7 +6,6 @@
 # clear terminal from wrapped lines
 
 LOG=/var/log/auto-install.log
-SERVER=http://www.panticz.de/pxe/scripts
 #MAC=$(LANG=us_EN; ifconfig -a | head -1 | awk /HWaddr/'{print tolower($5)}')
 if [ ! -z $1 ]; then
     MAC=$1
@@ -21,7 +20,6 @@ MAC_HASH=$(echo ${MAC} | md5sum | cut -d" " -f1)
 # default functions
 function script() {
     if [ ! -z $1 ]; then 
-        #URL=${SERVER}/$1
         URL=http://dl.panticz.de/scripts/$1
         FILE=${URL##*/}
 
