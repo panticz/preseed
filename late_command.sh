@@ -455,8 +455,8 @@ function install_forms() {
     wget -q http://dl.panticz.de/mr/install.forms.sh -O - | sudo bash -s $1
 }
 
-function installUmtsmon() {
-    script install.umtsmon.sh
+function install_umtsmon() {
+    script4 dep/install.umtsmon.sh
 }
 
 function install_tipp10() {
