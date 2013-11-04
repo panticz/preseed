@@ -74,7 +74,7 @@ d-i preseed/include_command string \
 
 d-i preseed/late_command string \
    in-target mv /etc/rc.local /etc/rc.local.org && \
-   in-target wget https://raw.github.com/panticz/preseed/master/late_command.rc -O /etc/rc.local && \
+   in-target wget --no-check-certificate https://raw.github.com/panticz/preseed/master/late_command.rc -O /etc/rc.local && \
    in-target chmod a+x /etc/rc.local
 
 # Finishing up the installation
