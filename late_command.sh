@@ -318,10 +318,12 @@ function install_multimedia() {
     install_skype
     install_dvd
     # install gbrainy
-    install vlc vlc-plugin-pulse mozilla-plugin-vlc
+    install_vlc
+}
 
-    # set vnc as default media player
-    sed -i 's|totem.desktop|vlc.desktop|g' /etc/gnome/defaults.list
+# install vlc
+function install_vlc() {
+    script4 install.vlc.sh
 }
 
 # install dvd support
