@@ -95,7 +95,7 @@ function install_boxee() {
 }
 
 function install_openttd() {
-    script install.openttd.txt
+    script4 install.openttd.sh
 }
 
 function install_wine() {
