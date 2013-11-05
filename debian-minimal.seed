@@ -1,3 +1,6 @@
+# To access this file via http use following redirection:
+# http://preseed.panticz.de/preseed/debian-minimal.seed
+
 # Localization
 d-i debian-installer/locale string en_US.UTF-8
 d-i console-setup/layoutcode string en
