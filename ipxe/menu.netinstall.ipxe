@@ -9,6 +9,7 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 menu NetInstall
 item --gap NetInstall Ubuntu:
 item install_ubuntu_13.10           Ubuntu 13.10 Saucy (preseed, user: service, pass: t00r)
+item install_ubuntu_13.10_autopart  Ubuntu 13.10 Saucy (preseed, autopart, user: service, pass: t00r)
 item install_ubuntu_13.04           Ubuntu 13.04 Raring (preseed, user: service, pass: t00r)
 item install_ubuntu_12.10           Ubuntu 12.10 Quantal (preseed, user: service, pass: t00r)
 item install_ubuntu_12.04           Ubuntu 12.04.3 Precise LTS (preseed, user: service, pass: t00r)
@@ -43,6 +44,11 @@ chain ${mainmenu}
 set release saucy
 goto install_ubuntu
 
+:install_ubuntu_13.10_autopart
+set autopart autopart
+set release saucy
+goto install_ubuntu
+
 :install_ubuntu_13.04
 set release raring
 goto install_ubuntu
@@ -63,7 +69,7 @@ goto install_ubuntu
 
 :install_ubuntu
 initrd http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/initrd.gz
-chain http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto=true interface=auto locale=en_US.UTF-8 priority=critical
+chain http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto=true interface=auto locale=en_US.UTF-8 priority=critical ${autopart}
 
 #
 # Debian
