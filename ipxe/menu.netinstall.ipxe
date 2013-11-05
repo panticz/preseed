@@ -86,7 +86,7 @@ goto install_debian
 
 :install_debian
 initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
-chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/preseed/debian-minimal.seed auto=true interface=auto locale=en_US.UTF-8 keyboard-configuration/xkb-keymap=en priority=critical ${autopart}
+chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/preseed/debian-minimal.seed auto=true interface=auto locale=en_US.UTF-8 priority=critical ${autopart}
 
 #
 # Fedora
