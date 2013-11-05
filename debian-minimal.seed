@@ -3,8 +3,7 @@
 
 # Localization
 d-i debian-installer/locale string en_US.UTF-8
-d-i console-setup/layoutcode string en
-d-i console-keymaps-at/keymap select us
+d-i keyboard-configuration/xkb-keymap us
 
 # Network configuration
 d-i netcfg/choose_interface select auto
