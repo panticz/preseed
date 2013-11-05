@@ -9,7 +9,7 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 menu NetInstall
 item --gap NetInstall Ubuntu:
 item install_ubuntu_13.10           Ubuntu 13.10 Saucy (preseed, user: service, pass: t00r)
-item install_ubuntu_13.10_autopart  Ubuntu 13.10 Saucy (preseed, autopart, user: service, pass: t00r)
+item install_ubuntu_13.10_autopart  Ubuntu 13.10 Saucy autopart (preseed, autopart, user: service, pass: t00r)
 item install_ubuntu_13.04           Ubuntu 13.04 Raring (preseed, user: service, pass: t00r)
 item install_ubuntu_12.10           Ubuntu 12.10 Quantal (preseed, user: service, pass: t00r)
 item install_ubuntu_12.04           Ubuntu 12.04.3 Precise LTS (preseed, user: service, pass: t00r)
@@ -17,9 +17,9 @@ item install_ubuntu_12.04_nonpae    Ubuntu 12.04.3 Precise Non-PAE (preseed, use
 item
 item --gap NetInstall Debian:
 item install_debian_7               Debian 7 Wheezy (preseed, user: root, pass: t00r)
-item install_debian_7_autopart      Debian 7 Wheezy (preseed, autopart, user: root, pass: t00r)
+item install_debian_7_autopart      Debian 7 Wheezy autopart (preseed, autopart, user: root, pass: t00r)
 item install_debian_6               Debian 6 Squeeze (preseed, user: root, pass: t00r)
-item install_debian_6_autopart      Debian 6 Squeeze (preseed, autopart, user: root, pass: t00r)
+item install_debian_6_autopart      Debian 6 Squeeze autopart (preseed, autopart, user: root, pass: t00r)
 item
 item --gap NetInstall Fedora:  
 item install_fedora_18              Fedora 18
