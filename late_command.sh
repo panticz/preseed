@@ -548,7 +548,7 @@ sudo apt-get install -y ipmitool
 # todo truecrypt (todo)
 # http://hacktolive.org/wiki/Repository
 
-# dep # script install.sflphone.sh
+# dep # script4 dep/install.sflphone.sh
 
 # BROKEN # .config perimssions are set to root
 # script install.app-runner.sh
