@@ -446,7 +446,7 @@ function gnome_human_list() {
 }
 
 function gnome_tuneup() {
-    script gnome.reduced_resources.txt
+    script4 gnome/enable.reduced_resources.sh
 }
 
 # install
