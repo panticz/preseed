@@ -480,7 +480,7 @@ function install_virtualbox() {
 }
 
 function install_bcm() {
-    script install.bcm.sh 
+    script4 dep/install.bcm.sh
 }
 
 function install_kvm() {
