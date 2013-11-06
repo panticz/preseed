@@ -18,31 +18,6 @@ MAC_HASH=$(echo ${MAC} | md5sum | cut -d" " -f1)
 
 
 # default functions
-function script() {
-    if [ ! -z $1 ]; then 
-        URL=http://dl.panticz.de/scripts/$1
-        FILE=${URL##*/}
-
-        wget -nv $URL -P /tmp
-        chmod +x /tmp/$FILE
-        /tmp/$FILE $2 2>&1 | tee -a ${LOG}
-    fi
-}
-
-function script3() {
-    if [ ! -z ${1} ]; then
-        URL=http://installit.googlecode.com/hg/${1}
-        FILE=${URL##*/}
-
-        echo "URL:$URL"
-        echo "FILE:$FILE"
-
-        wget -nv ${URL} -O /tmp/${FILE}
-        chmod +x /tmp/${FILE}
-        bash /tmp/${FILE} ${2} 2>&1 | tee -a ${LOG}
-    fi
-}
-
 function script4() {
     if [ ! -z ${1} ]; then
         URL=https://raw.github.com/panticz/installit/master/${1}
