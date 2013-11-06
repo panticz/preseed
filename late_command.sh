@@ -91,7 +91,7 @@ function install_skype() {
 }
 
 function install_boxee() {
-    script install.boxee.txt
+    script4 dep/install.boxee.sh
 }
 
 function install_openttd() {
