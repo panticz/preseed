@@ -442,7 +442,7 @@ function gnome_autologin() {
 }
 
 function gnome_human_list() {
-    script gnome.humanlist.txt
+    script4 gnome/enable.humanlist.sh
 }
 
 function gnome_tuneup() {
