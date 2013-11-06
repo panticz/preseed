@@ -551,7 +551,7 @@ sudo apt-get install -y ipmitool
 # dep # script4 dep/install.sflphone.sh
 
 # BROKEN # .config perimssions are set to root
-# script install.app-runner.sh
+# script4 dep/install.app-runner.sh
 
 # set android usb rights
 cat <<EOF> /etc/udev/rules.d/70-android.rules
