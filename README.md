@@ -16,6 +16,7 @@ Installation chart
          * | Automatic partitioning, if enabled (RAID1, LVM, ...)
          * |--- [ https://raw.github.com/panticz/preseed/master/regular.seed ]
          * |--- [ https://raw.github.com/panticz/preseed/master/raid1lvm.seed ]
+         * |--- [ https://raw.github.com/panticz/preseed/master/raid5lvm.seed ]
          * |
          * | Additional client specific configuration (partitioning, languages, user, ...)
          * |--- http://preseed.panticz.de/< MAC_HASH >.seed
