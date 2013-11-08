@@ -1,0 +1,93 @@
+# To access this file via http use following redirection:
+# http://preseed.panticz.de/preseed/raid5lvm.seed
+
+#
+# RAID
+#
+# The method should be set to "raid"
+d-i partman-auto/method string raid      
+
+# This makes partman automatically repartition without confirmation
+d-i partman-md/confirm boolean true
+
+# no warning if an RAID already esists
+d-i partman-md/device_remove_md boolean true
+d-i partman-md/confirm_nooverwrite boolean true
+
+d-i partman-partitioning/confirm_write_new_label boolean true
+d-i partman/choose_partition select finish
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+d-i partman-basicfilesystems/no_mount_point yes
+
+
+# use device label instead of UUIDs [uuid, traditional, label]
+d-i partman/mount_style select label
+
+# create raid raid1
+##d-i partman-auto/disk string /dev/sda /dev/sdb
+
+# create raid raid5
+# TODO: use all discs not only three
+d-i partman-auto/disk string /dev/sda /dev/sdb /dev/sdc
+
+
+#
+# LVM
+#
+# no warning if an LVM already exists
+d-i partman-lvm/device_remove_lvm boolean true
+d-i partman-lvm/confirm boolean true
+d-i partman-lvm/confirm_nooverwrite boolean true      
+
+## create lvm on raid1
+##d-i partman-auto-raid/recipe string     \
+##    1 2 0 lvm -                         \
+##        /dev/sda1#/dev/sdb1             \
+##    .
+
+# create lvm on raid5
+d-i partman-auto-raid/recipe string     \
+    5 3 0 lvm -                         \
+        /dev/sda1#/dev/sdb1#/dev/sdc1   \
+    .
+
+# Name default volume group vg0
+d-i partman-auto-lvm/new_vg_name string vg0
+
+# configure volume group and logical volumes
+d-i partman-auto/expert_recipe string   \
+    raid-lvm ::                         \
+        100 5000 -1 raid                \
+            $lvmignore{ }               \
+            method{ raid }              \
+        .                               \
+        4096 4096 4096 ext4             \
+            $defaultignore{ }           \
+            $lvmok{ }                   \
+            lv_name{ xen-root }         \
+            $bootable{ }                \
+            method{ format }            \
+            format{ }                   \
+            use_filesystem{ }           \
+            filesystem{ ext4 }          \
+            mountpoint{ / }             \
+        .                               \
+        1024 1024 1024 linux-swap       \
+            $defaultignore{ }           \
+            $lvmok{ }                   \
+            lv_name{ xen-swap }         \
+            method{ swap }              \
+            format{ }                   \
+        .                               \
+        64 2048 -1 ext4                 \
+            $defaultignore{ }           \
+            $lvmok{ }                   \
+            lv_name{ dummy }            \
+            use_filesystem{ }           \
+            filesystem{ ext4 }          \
+            method{ keep }              \
+        .
+
+# broken
+#d-i	grub-installer/bootdev string (hd0,0) (hd1,0)
