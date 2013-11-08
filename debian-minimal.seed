@@ -53,7 +53,11 @@ d-i preseed/early_command string \
 d-i partman/early_command string \
     if [ $(cat /proc/cmdline | grep autopart | wc -l) -eq 1 ]; then \
         DISCS=$(list-devices disk | wc -l) ;\
-        if [ ${DISCS} -eq 2 ]; then \
+        if [ ${DISCS} -gt 2 ]; then \
+            echo "raid5" >> /tmp/debug ;\
+            wget http://preseed.panticz.de/preseed/raid5lvm.seed -O /tmp/partman.cfg ;\
+            debconf-set-selections /tmp/partman.cfg ;\
+        elif [ ${DISCS} -eq 2 ]; then \
             echo "raid1" >> /tmp/debug ;\
             wget http://preseed.panticz.de/preseed/raid1lvm.seed -O /tmp/partman.cfg ;\
             debconf-set-selections /tmp/partman.cfg ;\
