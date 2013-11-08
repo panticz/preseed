@@ -27,9 +27,6 @@ d-i partman/mount_style select label
 # create raid raid1
 d-i partman-auto/disk string /dev/sda /dev/sdb
 
-# create raid raid5
-##d-i partman-auto/disk string /dev/sda /dev/sdb /dev/sdc
-
 
 #
 # LVM
@@ -44,12 +41,6 @@ d-i partman-auto-raid/recipe string     \
     1 2 0 lvm -                         \
         /dev/sda1#/dev/sdb1             \
     .
-
-# create lvm on raid5
-##d-i partman-auto-raid/recipe string     \
-##    5 3 0 lvm -                         \
-##        /dev/sda1#/dev/sdb1#/dev/sdc1   \
-##    .
 
 # Name default volume group vg0
 d-i partman-auto-lvm/new_vg_name string vg0
