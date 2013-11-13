@@ -594,6 +594,12 @@ function install_cpuburn() {
     script4 install.cpuburn.sh
 }
 
+function update_grub() {
+    for DEV in $(ls /dev/sd?); do
+        grub-install ${DEV}
+    done
+}
+
 function install_powermeter() {
     install_gnome_desktop
     install openssh-server
