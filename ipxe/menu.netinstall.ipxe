@@ -9,6 +9,7 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: service, password: t00r):
 item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
+item install_ubuntu_14.04_autopart  Ubuntu 14.04 LTS Trusty autopart
 item install_ubuntu_13.10           Ubuntu 13.10 Saucy
 item install_ubuntu_13.10_autopart  Ubuntu 13.10 Saucy autopart
 item install_ubuntu_13.04           Ubuntu 13.04 Raring
@@ -42,6 +43,11 @@ chain ${mainmenu}
 # Ubuntu
 #
 :install_ubuntu_14.04
+set release trusty
+goto install_ubuntu
+
+:install_ubuntu_14.04_autopart
+set autopart autopart
 set release trusty
 goto install_ubuntu
 
