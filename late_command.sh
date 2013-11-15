@@ -16,7 +16,6 @@ fi
 MAC_HASH=$(echo ${MAC} | md5sum | cut -d" " -f1)
 
 
-
 # default functions
 function script4() {
     if [ ! -z ${1} ]; then
@@ -24,7 +23,6 @@ function script4() {
         FILE=${URL##*/}
 
         echo "URL:$URL"
-        echo "FILE:$FILE"
 
         wget -q --no-check-certificate ${URL} -O /tmp/${FILE}
         chmod +x /tmp/${FILE}
