@@ -139,7 +139,7 @@ function install_Laser() {
 }
 
 function install_epson_business_inkjet() {
-    wget https://raw.github.com/panticz/installit/master/hardware/install.epson-business-inkjet.sh -O - | bash -
+    script4 hardware/install.epson-business-inkjet.sh
     sudo lpadmin -p EpsonOben -v socket://EpsonOben:2501 -E -P /usr/share/cups/model/ekb500dn.ppd
     # -o DefaultInputSlot=Front
     # lpoptions -p EpsonColor -o MediaType=PLAIN -o PageSize=A5
