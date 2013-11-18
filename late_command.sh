@@ -140,7 +140,7 @@ function install_Laser() {
 
 function install_epson_business_inkjet() {
     script4 hardware/install.epson-business-inkjet.sh
-    sudo lpadmin -p EpsonOben -v socket://EpsonOben:2501 -E -P /usr/share/cups/model/ekb500dn.ppd
+    sudo lpadmin -p EpsonOben -v socket://EpsonOben:2501 -E -P /usr/share/cups/model/ekpxb310.ppd
     # -o DefaultInputSlot=Front
     # lpoptions -p EpsonColor -o MediaType=PLAIN -o PageSize=A5
 }
