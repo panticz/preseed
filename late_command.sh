@@ -412,6 +412,7 @@ function autostart_radio() {
 # gnome
 function gnome_autologin() {
     script4 gnome/enable.autologin.sh $1
+    script4 gnome/disable_screenlock.sh
 }
 
 function gnome_human_list() {
