@@ -17,7 +17,7 @@ item --gap other OS:
 item tinycorelinux      Tiny Core Linux
 item grml_32_small      Grml 32 2013.02 small LiveCD
 item freedos            FreeDOS 1.1 Base
-itme breakin            breakin 3.71
+item breakin            breakin 3.71
 item
 item back   < Back to main menu
 choose target && goto ${target}
