@@ -226,6 +226,9 @@ function install_gnome_desktop() {
 
     # oneiric tweaks
     sudo apt-get install -y compizconfig-settings-manager
+    
+    # turn off error reporting
+    sudo sed -i 's|enabled=1|enabled=0|g' /etc/default/apport
 
     # fix network manager
     if [ $(lsb_release -rs | tr -d ".") -ge 1310 ]; then
