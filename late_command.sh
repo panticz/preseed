@@ -228,11 +228,19 @@ function install_gnome_desktop() {
     sudo apt-get install -y compizconfig-settings-manager
 
     # fix network manager
+    if [ $(lsb_release -rs | tr -d ".") -ge 1310 ]; then
+cat <<EOF> /etc/rc.local
+#!/bin/sh -e
+service network-manager restart
+exit 0
+EOF   
+    else
 cat <<EOF> /etc/rc.local
 #!/bin/sh -e
 /etc/init.d/network-manager restart
 exit 0
 EOF
+    fi
 }
 
 function install_lxdm_desktop() {
