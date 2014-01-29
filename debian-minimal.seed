@@ -43,11 +43,11 @@ tasksel tasksel/first multiselect ssh-server
 #d-i pkgsel/update-policy select unattended-upgrades
 
 # proxy
-#d-i preseed/early_command string \
-#    ping -c 1 apt-cacher > /dev/null \
-#    if [ $? -eq 0 ]; then \
-#        debconf-set mirror/http/proxy "http://apt-cacher:3142/" \
-#    fi
+d-i preseed/early_command string \
+    ping -c 1 apt-cacher > /dev/null \
+    if [ $? -eq 0 ]; then \
+        debconf-set mirror/http/proxy "http://apt-cacher:3142/" \
+    fi
 
 # partman
 d-i partman/early_command string \
