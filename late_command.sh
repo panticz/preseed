@@ -567,6 +567,9 @@ lpoptions -d Laser
 wget http://netcologne.dl.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip -P /tmp/
 unzip /tmp/jtds-1.2.5-dist.zip -d /tmp/
 sudo cp /tmp/jtds-1.2.5.jar /usr/share/java/
+
+# Fix: "mei_me 0000:00:03.0: unexpected reset: dev_state = RESETTING"
+echo "blacklist mei_me" | sudo tee /etc/modprobe.d/blacklist-mei_me.conf
 }
 
 function configure_locale() {
