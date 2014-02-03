@@ -570,6 +570,10 @@ sudo cp /tmp/jtds-1.2.5.jar /usr/share/java/
 
 # Fix: "mei_me 0000:00:03.0: unexpected reset: dev_state = RESETTING"
 echo "blacklist mei_me" | sudo tee /etc/modprobe.d/blacklist-mei_me.conf
+
+# view date and day in clock applet
+gsettings set com.canonical.indicator.datetime show-day true
+gsettings set com.canonical.indicator.datetime show-date true
 }
 
 function configure_locale() {
