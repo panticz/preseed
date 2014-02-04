@@ -170,13 +170,17 @@ function install_epson_business_inkjet() {
 }
         
 function install_Kyocera_FS-1010() {
-    wget http://dl.panticz.de/hardware/kyocera_fs-1010/Kyocera-FS-1010.ppd -P /tmp
-    lpadmin -p Kyocera-FS-1010 -v socket://192.168.1.11:9100 -E -P /tmp/Kyocera-FS-1010.ppd
-}
-
-function install_Kyocera_FS-1010_pako() {
-    wget http://dl.dropbox.com/u/4170695/www/Kyocera-FS-1010.ppd -P /tmp
-    lpadmin -p Kyocera_FS-1010_pako -v socket://192.168.2.1:9100 -E -P /tmp/Kyocera-FS-1010.ppd
+    PRINTER_NAME=$1
+    PRINTER_IP=$2
+    
+    # check parameter
+    [ -z ${PRINTER_NAME} ] && PRINTER_NAME=Kyocera-FS-1010
+    [ -z ${PRINTER_IP} ] && PRINTER_IP=kyocera
+    
+    # create printer
+    wget -q http://dl.panticz.de/hardware/kyocera_fs-1010/Kyocera-FS-1010.ppd -O /tmp/Kyocera-FS-1010.ppd
+    sudo lpadmin -p ${PRINTER_NAME} -v socket://${PRINTER_IP}:9100 -E -P /tmp/Kyocera-FS-1010.ppd
+    rm /tmp/Kyocera-FS-1010.ppd
 }
 
 function install_java-jdk() {
@@ -553,8 +557,7 @@ sudo apt-get install -y ipmitool
 
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
-# broken
-#install_Kyocera_FS-1010_pako
+install_Kyocera_FS-1010 Kyocera-FS-1010 192.168.2.1
 
 # todo truecrypt (todo)
 # http://hacktolive.org/wiki/Repository
