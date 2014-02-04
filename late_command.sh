@@ -351,7 +351,7 @@ function install_mr() {
     install -y openvpn network-manager-openvpn tofrodos imagemagick sshfs patch
     apt-get install -y openoffice.org-java-common openoffice.org-base openoffice.org-officebean
 #err?    install_yajhfc
-    install_Laser
+    install_HP-Laserjet-4050n 192.168.1.18
 
     # install and configure ssh mounts
     wget -q http://dl.panticz.de/mr/install.mrshare.sh -O - | sudo bash -
