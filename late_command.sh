@@ -120,6 +120,13 @@ function install_eclipse() {
 #
 # PRINTER
 #
+function install_HP-Laserjet-4050n() {
+    IP=$1
+    
+    wget -q http://dl.panticz.de/pakonb/cups/HP-Laserjet-4050n.ppd -O /tmp/HP-Laserjet-4050n.ppd
+    sudo lpadmin -p Laser -v socket://${IP}:9100 -E -P "/tmp/HP-Laserjet-4050n.ppd"
+}
+
 function install_Laser() {
     # get driver from kyocera homepage
     wget http://www.kyoceramita.de/dlc/de/driver/all/linux_ppd_s_ksl_8.-downloadcenteritem-Single-File.downloadcenteritem.tmp/Linux_PPDs_KSL8_4.zip -P /tmp/
