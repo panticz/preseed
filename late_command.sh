@@ -151,7 +151,7 @@ function install_Kyocera-FS-C5016N() {
     rm -r /tmp/PPD*_KSL_8.4
 }
 
-function install_Laser() {
+function install_Kyocera-FS-3820N() {
     # get driver from kyocera homepage
     wget http://www.kyoceramita.de/dlc/de/driver/all/linux_ppd_s_ksl_8.-downloadcenteritem-Single-File.downloadcenteritem.tmp/Linux_PPDs_KSL8_4.zip -P /tmp/
     unzip /tmp/Linux_PPDs_KSL8_4.zip -d /tmp
