@@ -125,6 +125,8 @@ function install_HP-Laserjet-4050n() {
     
     wget -q http://dl.panticz.de/hardware/hp_laserjet_4050n/HP-Laserjet-4050n.ppd -O /tmp/HP-Laserjet-4050n.ppd
     sudo lpadmin -p Laser -v socket://${IP}:9100 -E -P "/tmp/HP-Laserjet-4050n.ppd"
+    
+    #sudo /usr/bin/lpoptions -o Resolution=600dpi -o Option1=True -o Duplex=DuplexNoTumble -o InputSlot=Auto 
 }
 
 function install_HP-Officejet-Pro-8500-a910() {
