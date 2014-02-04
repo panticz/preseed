@@ -134,11 +134,10 @@ function install_HP-Officejet-Pro-8500-a910() {
     sudo lpadmin -p HP8500 -v socket://${IP}:9100 -E -P "/tmp/HP-Officejet-Pro-8500-a910.ppd"
 }
 
-function install_Laser() {
+function install_Kyocera-FS-C5016N() {
     # get driver from kyocera homepage
     wget http://www.kyoceramita.de/dlc/de/driver/all/linux_ppd_s_ksl_8.-downloadcenteritem-Single-File.downloadcenteritem.tmp/Linux_PPDs_KSL8_4.zip -P /tmp/
     unzip /tmp/Linux_PPDs_KSL8_4.zip -d /tmp
-    sudo lpadmin -p Laser -v socket://192.168.1.11:9100 -E -P "/tmp/PPD's_KSL_8.4/English/Kyocera_Mita_FS-3820N_en.ppd"
     sudo lpadmin -p LaserColor -v socket://192.168.1.15:9100 -E -P "/tmp/PPD's_KSL_8.4/English/Kyocera_Mita_FS-C5016N_en.ppd"
 #Foomatic/hpijs-pcl5e
     # -o PageSize=A4
@@ -146,6 +145,17 @@ function install_Laser() {
     # install linux driver
     # foomatic-ppdfile -p "foomatic-ppdfile:Kyocera-FS-C5016N-Postscript.ppd" > /tmp/Kyocera-FS-C5016N-Postscript.ppd
     # lpadmin -p LaserColorOben -v socket://192.168.1.11:9100 -E -P /tmp/Kyocera-FS-C5016N-Postscript.ppd -o PageSize=A4
+
+    # clean up
+    rm /tmp/Linux_PPDs_KSL8_4.zip
+    rm -r /tmp/PPD*_KSL_8.4
+}
+
+function install_Laser() {
+    # get driver from kyocera homepage
+    wget http://www.kyoceramita.de/dlc/de/driver/all/linux_ppd_s_ksl_8.-downloadcenteritem-Single-File.downloadcenteritem.tmp/Linux_PPDs_KSL8_4.zip -P /tmp/
+    unzip /tmp/Linux_PPDs_KSL8_4.zip -d /tmp
+    sudo lpadmin -p Laser -v socket://192.168.1.11:9100 -E -P "/tmp/PPD's_KSL_8.4/English/Kyocera_Mita_FS-3820N_en.ppd"
 
     # clean up
     rm /tmp/Linux_PPDs_KSL8_4.zip
