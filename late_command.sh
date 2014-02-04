@@ -127,6 +127,13 @@ function install_HP-Laserjet-4050n() {
     sudo lpadmin -p Laser -v socket://${IP}:9100 -E -P "/tmp/HP-Laserjet-4050n.ppd"
 }
 
+function install_HP-Officejet-Pro-8500-a910() {
+    IP=$1
+    
+    wget -q http://dl.panticz.de/pakonb/cups/HP-Officejet-Pro-8500-a910.ppd -O /tmp/HP-Officejet-Pro-8500-a910.ppd
+    sudo lpadmin -p HP8500 -v socket://${IP}:9100 -E -P "/tmp/HP-Officejet-Pro-8500-a910.ppd"
+}
+
 function install_Laser() {
     # get driver from kyocera homepage
     wget http://www.kyoceramita.de/dlc/de/driver/all/linux_ppd_s_ksl_8.-downloadcenteritem-Single-File.downloadcenteritem.tmp/Linux_PPDs_KSL8_4.zip -P /tmp/
