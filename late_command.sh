@@ -130,7 +130,7 @@ function install_HP-Laserjet-4050n() {
 function install_HP-Officejet-Pro-8500-a910() {
     IP=$1
     
-    wget -q http://dl.panticz.de/pakonb/cups/HP-Officejet-Pro-8500-a910.ppd -O /tmp/HP-Officejet-Pro-8500-a910.ppd
+    wget -q http://dl.panticz.de/hardware/hp_officejet-pro-8500/HP-Officejet-Pro-8500-a910.ppd -O /tmp/HP-Officejet-Pro-8500-a910.ppd
     sudo lpadmin -p HP8500 -v socket://${IP}:9100 -E -P "/tmp/HP-Officejet-Pro-8500-a910.ppd"
 }
 
