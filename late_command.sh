@@ -599,7 +599,7 @@ su pako -c 'gconftool-2 --type bool --set /apps/gedit-2/preferences/editor/save/
 su pako -c "gsettings set org.gnome.desktop.interface font-name 'Ubuntu 10'"
 
 # set default printer
-lpoptions -d Laser
+sudo lpoptions -d HP-Laserjet-4050n
 
 # install mssql driver
 wget http://netcologne.dl.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip -P /tmp/
