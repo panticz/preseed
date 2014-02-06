@@ -121,10 +121,17 @@ function install_eclipse() {
 # PRINTER
 #
 function install_HP-Laserjet-4050n() {
-    IP=$1
+    PRINTER_NAME=$1
+    PRINTER_IP=$2
     
+    # check parameter
+    [ -z ${PRINTER_NAME} ] && PRINTER_NAME=HP-Laserjet-4050n
+    [ -z ${PRINTER_IP} ] && PRINTER_IP=hp4050
+    
+    # create printer
     wget -q http://dl.panticz.de/hardware/hp_laserjet_4050n/HP-Laserjet-4050n.ppd -O /tmp/HP-Laserjet-4050n.ppd
-    sudo lpadmin -p Laser -v socket://${IP}:9100 -E -P "/tmp/HP-Laserjet-4050n.ppd"
+    sudo lpadmin -p ${PRINTER_NAME} -v socket://${PRINTER_IP}:9100 -E -P /tmp/HP-Laserjet-4050n.ppd
+    rm /tmp/HP-Laserjet-4050n.ppd
     
     #sudo /usr/bin/lpoptions -o Resolution=600dpi -o Option1=True -o Duplex=DuplexNoTumble -o InputSlot=Auto 
 }
@@ -367,7 +374,7 @@ function install_mr() {
     install -y openvpn network-manager-openvpn tofrodos imagemagick sshfs patch
     apt-get install -y openoffice.org-java-common openoffice.org-base openoffice.org-officebean
 #err?    install_yajhfc
-    install_HP-Laserjet-4050n 192.168.1.18
+    install_HP-Laserjet-4050n HP-Laserjet-4050n 192.168.1.18
 
     # install and configure ssh mounts
     wget -q http://dl.panticz.de/mr/install.mrshare.sh -O - | sudo bash -
