@@ -566,7 +566,7 @@ install_handbrake
 sudo apt-get install -y git
 sudo apt-get install -y build-essential
 sudo apt-get install -y ipmitool
-
+sudo apt-get install -y nmap
 
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
