@@ -86,7 +86,7 @@ goto install_ubuntu
 
 :install_ubuntu
 initrd http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/initrd.gz
-chain http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto=true interface=auto locale=en_US.UTF-8 priority=critical ${autopart}
+chain http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/${nonpae}ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto=true netcfg/choose_interface=${net0/mac} locale=en_US.UTF-8 priority=critical ${autopart}
 
 #
 # Debian
