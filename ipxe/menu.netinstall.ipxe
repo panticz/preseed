@@ -21,6 +21,7 @@ item --gap NetInstall Debian
 item install_debian_7_not_preseed   Debian 7 Wheezy
 item
 item --gap NetInstall Debian Preseed (user: root, password: t00r):
+item install_debian_8               Debian 8 Jessie (unstable)
 item install_debian_7               Debian 7 Wheezy
 item install_debian_7_autopart      Debian 7 Wheezy autopart
 item install_debian_6               Debian 6 Squeeze
@@ -105,6 +106,10 @@ goto install_debian_7
 
 :install_debian_7
 set release wheezy
+goto install_debian
+
+:install_debian_8
+set release unstable
 goto install_debian
 
 :install_debian_7_not_preseed
