@@ -489,6 +489,10 @@ function install_tipp10() {
     script4 install.tipp10.txt
 }
 
+function install_xbmc() {
+    script4 install.xbmc.sh
+}
+
 function install_gimp() {
     script4 install.gimp.sh
 }
