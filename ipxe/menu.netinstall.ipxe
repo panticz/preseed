@@ -19,7 +19,6 @@ item install_ubuntu_12.04_nonpae    Ubuntu 12.04.3 LTS Precise Non-PAE
 item
 item --gap NetInstall Debian
 item install_debian_7_not_preseed   Debian 7 Wheezy
-item debian_minimal_netinstall_cd   Debian NetInstall minimal CD
 item
 item --gap NetInstall Debian Preseed (user: root, password: t00r):
 item install_debian_8               Debian 8 Jessie (unstable)
@@ -121,10 +120,6 @@ chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/c
 :install_debian
 initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
 chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/preseed/debian-minimal.seed auto=true netcfg/choose_interface=${net0/mac} locale=en_US.UTF-8 priority=critical ${autopart}
-
-:debian_minimal_netinstall_cd
-imgfetch http://cdimage.debian.org/debian-cd/7.4.0/amd64/iso-cd/debian-7.4.0-amd64-netinst.iso
-chain http://preseed.panticz.de/ipxe/memdisk iso
 
 #
 # Fedora
