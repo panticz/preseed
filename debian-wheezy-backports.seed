@@ -1,0 +1,5 @@
+# install debian wheezy
+d-i mirror/suite string wheezy
+
+# install linux kernel from wheezy-backports
+d-i preseed/late_command string in-target apt-get install -y -t wheezy-backports linux-image-amd64
