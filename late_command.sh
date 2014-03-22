@@ -273,17 +273,9 @@ function install_gnome_desktop() {
 
     # fix network manager
     if [ $(lsb_release -rs | tr -d ".") -ge 1310 ]; then
-cat <<EOF> /etc/rc.local
-#!/bin/sh -e
-service network-manager restart
-exit 0
-EOF   
+        sed -i '$ i\service network-manager restart' /etc/rc.local
     else
-cat <<EOF> /etc/rc.local
-#!/bin/sh -e
-/etc/init.d/network-manager restart
-exit 0
-EOF
+        sed -i '$ i\/etc/init.d/network-manager restart' /etc/rc.local
     fi
 }
 
