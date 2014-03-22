@@ -25,6 +25,7 @@ item --gap NetInstall Debian Preseed (user: root, password: t00r):
 item install_debian_8               Debian 8 Jessie (unstable)
 item install_debian_7               Debian 7 Wheezy
 item install_debian_7_autopart      Debian 7 Wheezy autopart
+item install_debian_7_backports_autopart      Debian 7 Wheezy backports autopart
 item install_debian_6               Debian 6 Squeeze
 item install_debian_6_autopart      Debian 6 Squeeze autopart
 item
@@ -105,6 +106,10 @@ goto install_debian
 set autopart autopart
 goto install_debian_7
 
+:install_debian_7_backports_autopart
+set autopart autopart
+goto install_debian_backports
+
 :install_debian_7
 set release wheezy
 goto install_debian
@@ -126,6 +131,11 @@ chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/c
 :install_debian
 initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
 chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/preseed/debian-minimal.seed auto=true netcfg/choose_interface=${net0/mac} locale=en_US.UTF-8 priority=critical ${autopart}
+
+:install_debian_backports
+initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
+chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/preseed/debian-wheezy-backports-minimal-preseed.seed auto=true netcfg/choose_interface=${net0/mac} locale=en_US.UTF-8 priority=critical ${autopart}
+
 
 #
 # Fedora
