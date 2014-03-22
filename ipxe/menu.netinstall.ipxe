@@ -19,6 +19,7 @@ item install_ubuntu_12.04_nonpae    Ubuntu 12.04.3 LTS Precise Non-PAE
 item
 item --gap NetInstall Debian
 item install_debian_7_not_preseed   Debian 7 Wheezy
+item install_debian_7_backports     Debian 7 Wheezy (wheezy-backports kernel)
 item
 item --gap NetInstall Debian Preseed (user: root, password: t00r):
 item install_debian_8               Debian 8 Jessie (unstable)
@@ -116,6 +117,11 @@ goto install_debian
 set release wheezy
 initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
 chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux
+
+:install_debian_7_backports
+set release unstable
+initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
+chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/preseed/debian-wheezy-backports.seed
 
 :install_debian
 initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
