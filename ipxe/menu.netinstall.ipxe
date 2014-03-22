@@ -29,7 +29,7 @@ item install_debian_6               Debian 6 Squeeze
 item install_debian_6_autopart      Debian 6 Squeeze autopart
 item
 item --gap NetInstall Fedora:  
-item install_fedora_18              Fedora 18
+item install_fedora_20              Fedora 20
 item install_fedora_19              Fedora 19
 item
 item --gap NetInstall CentOS:  
@@ -131,8 +131,8 @@ chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/c
 # Fedora
 #
 # TODO: auto 32/64 bit
-:install_fedora_18
-set release 18
+:install_fedora_20
+set release 20
 goto install_fedora
 
 :install_fedora_19
