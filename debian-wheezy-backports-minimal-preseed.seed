@@ -1,0 +1,3 @@
+d-i preseed/include string \
+    http://preseed.panticz.de/preseed/debian-minimal.seed \
+    http://preseed.panticz.de/preseed/debian-wheezy-backports-minimal.seed
