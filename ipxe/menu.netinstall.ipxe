@@ -18,6 +18,7 @@ item install_ubuntu_12.04           Ubuntu 12.04.3 LTS Precise
 item install_ubuntu_12.04_nonpae    Ubuntu 12.04.3 LTS Precise Non-PAE
 item
 item --gap NetInstall Debian
+item install_debian_6_not_preseed   Debian 6 Squeeze
 item install_debian_7_not_preseed   Debian 7 Wheezy
 item install_debian_7_backports     Debian 7 Wheezy (wheezy-backports kernel)
 item
@@ -117,6 +118,11 @@ goto install_debian
 :install_debian_8
 set release unstable
 goto install_debian
+
+:install_debian_6_not_preseed
+set release squeeze
+initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
+chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux
 
 :install_debian_7_not_preseed
 set release wheezy
