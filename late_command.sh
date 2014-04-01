@@ -616,15 +616,6 @@ gsettings set com.canonical.indicator.datetime show-day true
 gsettings set com.canonical.indicator.datetime show-date true
 }
 
-function configure_locale() {
-    # configure locale
-    echo 'LANG="de_DE.UTF-8"' > /etc/default/locale
-    echo 'LANG="de_DE.UTF-8"' >> /etc/environment
-    echo 'de_DE.UTF-8 UTF-8' > /etc/locale.gen
-
-    #wget -q http://www.panticz.de/sites/default/files/scripts/configure_locale.sh -O - | bash -
-}
-
 function install_nvidia_graphic() {
     script4 install.nvidia-graphic.sh
 }
@@ -729,9 +720,6 @@ echo "MAC_HASH: ${MAC_HASH}"
 
 # get post install script for client
 wget -q "http://preseed.panticz.de/lc/${MAC_HASH}" -O /tmp/lc.sh && chmod 777 /tmp/lc.sh && . /tmp/lc.sh
-
-# configure locale
-configure_locale
 
 # Set the debconf priority back to low
 #echo debconf debconf/priority select low | debconf-set-selections -v  2>&1 | tee -a ${LOG}
