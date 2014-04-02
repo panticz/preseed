@@ -12,8 +12,6 @@ item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
 item install_ubuntu_14.04_autopart  Ubuntu 14.04 LTS Trusty autopart
 item install_ubuntu_13.10           Ubuntu 13.10 Saucy
 item install_ubuntu_13.10_autopart  Ubuntu 13.10 Saucy autopart
-item install_ubuntu_13.04           Ubuntu 13.04 Raring
-item install_ubuntu_12.10           Ubuntu 12.10 Quantal
 item install_ubuntu_12.04           Ubuntu 12.04.3 LTS Precise
 item install_ubuntu_12.04_nonpae    Ubuntu 12.04.3 LTS Precise Non-PAE
 item
@@ -68,14 +66,6 @@ goto install_ubuntu
 :install_ubuntu_13.10_autopart
 set autopart autopart
 set release saucy
-goto install_ubuntu
-
-:install_ubuntu_13.04
-set release raring
-goto install_ubuntu
-
-:install_ubuntu_12.10
-set release quantal
 goto install_ubuntu
 
 :install_ubuntu_12.04
