@@ -216,7 +216,7 @@ function install_language() {
 }
 
 # install desktop
-function install_gnome_desktop() {
+function install_gnome_desktop() {f
     # install gnome desktop
     sudo apt-get -q install -y ubuntu-desktop
 
@@ -465,6 +465,14 @@ function gnome_human_list() {
 
 function gnome_tuneup() {
     script4 gnome/enable.reduced_resources.sh
+}
+
+# disable consistent network device naming
+function disable_biosdevname() {
+    sed -i 's|GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"|GRUB_CMDLINE_LINUX_DEFAULT="biosdevname=0 quiet splash"|g' /etc/default/grub
+    update-grub
+
+    sed -i 's|p1p1|eth0|g' /etc/network/interfaces
 }
 
 # install
