@@ -43,7 +43,7 @@ d-i pkgsel/update-policy select unattended-upgrades
 
 # proxy
 d-i preseed/early_command string \
-    ping -c 1 apt-cacher > /dev/null 2>&1 && debconf-set mirror/http/proxy "http://apt-cacher:3142/"
+    ping -c 1 apt-cacher > /dev/null 2>&1 && debconf-set mirror/http/proxy "http://apt-cacher:3142/" || echo
 
 # partman
 d-i partman/early_command string \
