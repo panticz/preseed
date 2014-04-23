@@ -44,10 +44,7 @@ tasksel tasksel/first multiselect ssh-server
 
 # proxy
 d-i preseed/early_command string \
-    ping -c 1 apt-cacher > /dev/null \
-    if [ $? -eq 0 ]; then \
-        debconf-set mirror/http/proxy "http://apt-cacher:3142/" \
-    fi
+    ping -c 1 apt-cacher > /dev/null 2>&1 && debconf-set mirror/http/proxy "http://apt-cacher:3142/"
 
 # partman
 d-i partman/early_command string \
