@@ -19,5 +19,8 @@ menuentry "Network boot (iPXE)" {
 }
 EOF
 
+# make executable
+sudo chmod a+x /etc/grub.d/49_ipxe
+
 # update GRUB config
 update-grub
