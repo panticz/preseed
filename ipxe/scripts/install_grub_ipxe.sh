@@ -7,7 +7,7 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # download GRUB iPXE boot image
-wget http://dl.panticz.de/ipxe/ipxe.lkrn -O /boot/grub/ipxe.lkrn
+wget -q http://dl.panticz.de/ipxe/ipxe.lkrn -O /boot/grub/ipxe.lkrn
 
 # create GRUB menu entry
 cat <<EOF> /etc/grub.d/49_ipxe 
