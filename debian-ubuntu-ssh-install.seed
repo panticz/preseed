@@ -1,0 +1,3 @@
+d-i network-console/password password installer
+d-i network-console/password-again password installer
+d-i preseed/early_command string anna-install network-console
