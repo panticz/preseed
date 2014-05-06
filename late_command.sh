@@ -216,7 +216,7 @@ function install_language() {
 }
 
 # install desktop
-function install_gnome_desktop() {f
+function install_gnome_desktop() {
     # install gnome desktop
     sudo apt-get -q install -y ubuntu-desktop
 
