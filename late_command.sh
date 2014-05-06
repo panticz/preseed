@@ -99,6 +99,9 @@ function install_puppet_client() {
     script4 install.puppet-client.sh
 }
 
+function install_nemo() {
+    script4 install.nemo.sh
+}
 
 
 #
