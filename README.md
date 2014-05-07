@@ -4,6 +4,7 @@ Installation chart
 * NET PXE boot (http://dl.panticz.de/ipxe/ipxe.pxe)
 * USB boot (http://dl.panticz.de/ipxe/ipxe.usb)
 * CD boot (http://dl.panticz.de/ipxe/ipxe.iso)
+* GRUB boot (http://dl.panticz.de/ipxe/ipxe.lkrn)
   * |
   * iPXE boot (Compile iPXE: https://raw.githubusercontent.com/panticz/preseed/master/ipxe/scripts/build_ipxe.sh)
   * http://preseed.panticz.de/< MAC_ADDRESS >
