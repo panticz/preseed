@@ -23,8 +23,8 @@ d-i auto-install/enabled boolean true
 # Account setup
 d-i passwd/user-fullname string ubuntu
 d-i passwd/username string ubuntu
-d-i passwd/user-password password t00r
-d-i passwd/user-password-again password t00r
+d-i passwd/user-password password ubuntu
+d-i passwd/user-password-again password ubuntu
 d-i user-setup/allow-password-weak boolean true
 
 # Apt setup
