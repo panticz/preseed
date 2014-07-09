@@ -521,6 +521,10 @@ function install_xen() {
     script4 install.xen.sh
 }
 
+function install_lxc() {
+    script4 install.lxc.sh
+}
+
 function configure_pakonb() {
 sudo apt-get clean | tee -a ${LOG}
 
