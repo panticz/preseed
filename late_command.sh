@@ -517,6 +517,10 @@ function install_kvm() {
      apt-get install -y kvm #qemu
 }
 
+function install_xen() {
+    script4 install.xen.sh
+}
+
 function configure_pakonb() {
 sudo apt-get clean | tee -a ${LOG}
 
