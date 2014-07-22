@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIST=saucy
+DIST=trusty
 
 mkdir /tmp/iso
 
