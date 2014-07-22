@@ -53,7 +53,7 @@ d-i partman-auto/expert_recipe string   \
             $lvmignore{ }               \
             method{ raid }              \
         .                               \
-        4096 4096 4096 ext4             \
+        8192 8192 8192 ext4             \
             $defaultignore{ }           \
             $lvmok{ }                   \
             lv_name{ xen-root }         \
