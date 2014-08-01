@@ -396,6 +396,9 @@ function install_mr() {
 
     # load nfs module on startup
     cat /etc/modules | grep nfs || echo nfs >> /etc/modules
+    
+    # install forms
+    install_forms
 
     # create gnome menu
     wget -q http://dl.panticz.de/mr/ritter.gnome.menu.sh -O - | sudo bash -
