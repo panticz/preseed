@@ -640,6 +640,9 @@ echo "blacklist mei_me" | sudo tee /etc/modprobe.d/blacklist-mei_me.conf
 # view date and day in clock applet
 gsettings set com.canonical.indicator.datetime show-day true
 gsettings set com.canonical.indicator.datetime show-date true
+
+# restore OpenVPN configuration
+wget https://raw.githubusercontent.com/panticz/scripts/master/restoreOpenvpnConfig -O - | bash -
 }
 
 function install_nvidia_graphic() {
