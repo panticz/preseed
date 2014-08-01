@@ -525,6 +525,10 @@ function install_lxc() {
     script4 install.lxc.sh
 }
 
+function install_docker() {
+    apt-get install -y docker.io
+}
+
 function configure_pakonb() {
 sudo apt-get clean | tee -a ${LOG}
 
