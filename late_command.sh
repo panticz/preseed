@@ -643,6 +643,9 @@ gsettings set com.canonical.indicator.datetime show-date true
 
 # restore OpenVPN configuration
 wget https://raw.githubusercontent.com/panticz/scripts/master/restoreOpenvpnConfig.sh -O - | bash -
+
+# restore WiFi configuration
+wget https://github.com/panticz/scripts/blob/master/restoreWifiConfig.sh -O - | bash -
 }
 
 function install_nvidia_graphic() {
