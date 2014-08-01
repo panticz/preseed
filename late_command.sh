@@ -642,7 +642,7 @@ gsettings set com.canonical.indicator.datetime show-day true
 gsettings set com.canonical.indicator.datetime show-date true
 
 # restore OpenVPN configuration
-wget https://raw.githubusercontent.com/panticz/scripts/master/restoreOpenvpnConfig -O - | bash -
+wget https://raw.githubusercontent.com/panticz/scripts/master/restoreOpenvpnConfig.sh -O - | bash -
 }
 
 function install_nvidia_graphic() {
