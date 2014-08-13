@@ -386,13 +386,15 @@ function install_mr() {
     # install nfs
     sudo apt-get install -y nfs-common
 
+    # create mount directories
+    mkdir /media/programme /media/bilder /media/lagerliste /media/projekte /media/texte
+    
     # create mountpoints
     sudo echo "srv:/programme          /media/programme      nfs4    _netdev,auto  0  0" >> /etc/fstab
     sudo echo "srv:/bilder             /media/bilder         nfs4    _netdev,auto  0  0" >> /etc/fstab
     sudo echo "srv:/lagerliste         /media/lagerliste     nfs4    _netdev,auto  0  0" >> /etc/fstab
     sudo echo "srv:/projekte           /media/projekte       nfs4    _netdev,auto  0  0" >> /etc/fstab
     sudo echo "srv:/texte              /media/texte          nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv:/develop            /media/develop        nfs4    _netdev,auto  0  0" >> /etc/fstab
 
     # load nfs module on startup
     cat /etc/modules | grep nfs || echo nfs >> /etc/modules
@@ -545,10 +547,14 @@ fi
 # fix wifi
 update-rc.d network-manager defaults
 
+# create mount directories
+mkdir /media/hs /media/video /media/develop
+
 cat <<EOF>> /etc/fstab
 hs:/hs                  /media/hs             nfs4    _netdev,auto  0  0
 hs:/video               /media/video          nfs4    _netdev,auto  0  0
 tmpfs                   /tmp                  tmpfs   nosuid,size=50% 0  0
+srv:/develop            /media/develop        nfs4    _netdev,auto  0  0
 EOF
 
 
