@@ -773,6 +773,9 @@ apt-get dist-upgrade -y -qq | tee -a ${LOG}
 apt-get clean | tee -a ${LOG}
 apt-get -y autoremove | tee -a ${LOG}
 
+# disable APT proxy
+disable_apt_proxy
+
 # remove dummy lvm
 [ -L /dev/vg0/dummy ] && lvremove -f /dev/vg0/dummy
 
