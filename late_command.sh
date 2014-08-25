@@ -301,6 +301,7 @@ function install_desktop_extras() {
 # dep # install_java-jre
     install_libreoffice
     install_teamviewer
+    install_vlc
     apt-get install -y p7zip
 
     install linux-firmware-nonfree
