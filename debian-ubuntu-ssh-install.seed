@@ -1,3 +1,7 @@
+d-i debconf/priority select critical
+d-i auto-install/enabled boolean true
+d-i netcfg/choose_interface select auto
+d-i netcfg/get_hostname string anna-install
 d-i network-console/password password installer
 d-i network-console/password-again password installer
 d-i preseed/early_command string anna-install network-console
