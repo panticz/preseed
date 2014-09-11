@@ -591,6 +591,7 @@ sudo apt-get install -y hamster-indicator
 sudo apt-get install -y clusterssh
 install_handbrake
 sudo apt-get install -y git
+sudo apt-get install -y meld
 sudo apt-get install -y build-essential
 sudo apt-get install -y ipmitool
 sudo apt-get install -y nmap
