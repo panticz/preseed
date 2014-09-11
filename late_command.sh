@@ -648,6 +648,13 @@ echo "blacklist mei_me" | sudo tee /etc/modprobe.d/blacklist-mei_me.conf
 gsettings set com.canonical.indicator.datetime show-day true
 gsettings set com.canonical.indicator.datetime show-date true
 
+# configure nautilus
+gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+gsettings set org.gnome.nautilus.list-view default-zoom-level 'smallest'
+
+# configure gedit
+gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
+
 # restore OpenVPN configuration
 wget https://raw.githubusercontent.com/panticz/scripts/master/restoreOpenvpnConfig.sh -O - | bash -
 
