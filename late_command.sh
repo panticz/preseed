@@ -597,6 +597,7 @@ sudo apt-get install -y ipmitool
 sudo apt-get install -y nmap
 sudo apt-get install -y gconf-editor
 sudo apt-get install -y rdesktop
+sudo apt-get install -y libav-tools
 install_docker
 install_lxc
 
