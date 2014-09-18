@@ -629,9 +629,6 @@ chmod a+x /usr/sbin/usb_autorun.sh
 # configure sudoers
 echo "pako ALL=NOPASSWD: /home/pako/privat/scripts/build/mkXbmc.sh" >> /etc/sudoers
 
-# disable gedit backup files
-su pako -c 'gconftool-2 --type bool --set /apps/gedit-2/preferences/editor/save/create_backup_copy "false"'
-
 # set font size
 su pako -c "gsettings set org.gnome.desktop.interface font-name 'Ubuntu 10'"
 
