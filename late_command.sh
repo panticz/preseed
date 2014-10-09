@@ -67,6 +67,10 @@ function install_skype() {
     script4 install.skype.sh
 }
 
+function install_twinkle() {
+    script4 install.twinkle.sh
+}
+
 function install_boxee() {
     script4 dep/install.boxee.sh
 }
