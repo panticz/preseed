@@ -616,6 +616,7 @@ install_twinkle
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
 install_Kyocera_FS-1010 Kyocera-FS-1010 192.168.2.1
+install_Canon-LBP 172.29.12.115
 
 # todo truecrypt (todo)
 # http://hacktolive.org/wiki/Repository
