@@ -604,6 +604,7 @@ sudo apt-get install -y rdesktop
 sudo apt-get install -y libav-tools
 install_docker
 install_lxc
+install_twinkle
 
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
