@@ -358,6 +358,11 @@ function install_vlc() {
     script4 install.vlc.sh
 }
 
+# install pulseaudio equalizer
+function install_pulseaudio-equalizer() {
+    script4 install.pulseaudio-equalizer.sh
+}
+
 # install dvd support
 function install_dvd() {
     script4 install.libdvdcss.sh
