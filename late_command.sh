@@ -609,6 +609,7 @@ sudo apt-get install -y nmap
 sudo apt-get install -y gconf-editor
 sudo apt-get install -y rdesktop
 sudo apt-get install -y libav-tools
+sudo apt-get install -y terminator
 install_docker
 install_lxc
 install_twinkle
