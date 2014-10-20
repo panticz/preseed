@@ -158,7 +158,7 @@ function install_Canon-LBP() {
     IP=$1
     
     wget -q http://dl.panticz.de/hardware/canon_lbp/Canon-LBP-5975.ppd -O /tmp/Canon-LBP-5975.ppd
-    sudo lpadmin -p HP8500 -v socket://${IP}:9100 -E -P "/tmp/Canon-LBP-5975.ppd"
+    sudo lpadmin -p CanonLBP -v socket://${IP}:9100 -E -P "/tmp/Canon-LBP-5975.ppd"
 }
 
 function install_Kyocera-FS-C5016N() {
