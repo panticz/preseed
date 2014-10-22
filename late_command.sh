@@ -619,10 +619,18 @@ install_docker
 install_lxc
 install_twinkle
 
+# install mssql driver
+wget http://netcologne.dl.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip -P /tmp/
+unzip /tmp/jtds-1.2.5-dist.zip -d /tmp/
+sudo cp /tmp/jtds-1.2.5.jar /usr/share/java/
+
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
 install_Kyocera_FS-1010 Kyocera-FS-1010 192.168.2.1
 install_Canon-LBP 172.29.12.115
+
+# set default printer
+sudo lpoptions -d HP-Laserjet-4050n
 
 # todo truecrypt (todo)
 # http://hacktolive.org/wiki/Repository
@@ -642,46 +650,21 @@ sudo wget http://www.panticz.de/sites/default/files/scripts/udev/70-persistent-u
 sudo wget http://www.panticz.de/sites/default/files/scripts/udev/usb_autorun.sh -O /usr/sbin/usb_autorun.sh
 chmod a+x /usr/sbin/usb_autorun.sh
 
-# remove applications
-#apt-get remove -y ubuntuone-client ubuntuone-client-gnome
-
 # configure sudoers
 echo "pako ALL=NOPASSWD: /home/pako/privat/scripts/build/mkXbmc.sh" >> /etc/sudoers
 
-# set font size
-su pako -c "gsettings set org.gnome.desktop.interface font-name 'Ubuntu 10'"
-
-# set default printer
-sudo lpoptions -d HP-Laserjet-4050n
-
-# install mssql driver
-wget http://netcologne.dl.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip -P /tmp/
-unzip /tmp/jtds-1.2.5-dist.zip -d /tmp/
-sudo cp /tmp/jtds-1.2.5.jar /usr/share/java/
-
 # Fix: "mei_me 0000:00:03.0: unexpected reset: dev_state = RESETTING"
 echo "blacklist mei_me" | sudo tee /etc/modprobe.d/blacklist-mei_me.conf
-
-# view date and day in clock applet
-gsettings set com.canonical.indicator.datetime show-day true
-gsettings set com.canonical.indicator.datetime show-date true
-
-# configure nautilus
-gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
-gsettings set org.gnome.nautilus.list-view default-zoom-level 'smallest'
-
-# configure gedit
-gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
-gsettings set org.gnome.gedit.preferences.editor tabs-size 4
-gsettings set org.gnome.gedit.preferences.editor insert-spaces true
-gsettings set org.gnome.gedit.preferences.editor bracket-matching true
-gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
 
 # restore OpenVPN configuration
 wget https://raw.githubusercontent.com/panticz/scripts/master/restoreOpenvpnConfig.sh -O - | bash -
 
 # restore WiFi configuration
 wget https://raw.githubusercontent.com/panticz/scripts/master/restoreWifiConfig.sh -O - | bash -
+
+# TODO: run as user on first login
+# set default settings
+wget https://raw.githubusercontent.com/panticz/scripts/master/pako.sh -O - | bash -
 }
 
 function install_nvidia_graphic() {
