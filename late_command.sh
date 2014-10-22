@@ -552,6 +552,25 @@ function install_docker() {
     apt-get install -y docker.io
 }
 
+function configure_pawkon() {
+    echo "LABEL=home /home ext4 defaults 0 0" >> /etc/fstab
+
+    apt-get install -y git
+    apt-get install -y curl
+    apt-get install -y terminator
+
+    apt-get install -y virtualbox
+    apt-get install -y virtualbox-guest-utils
+    apt-get install -y vagrant
+
+    vagrant plugin install vagrant-salt
+    vagrant plugin install vagrant-vbox-snapshot
+    
+    # TODO: run as user on first login
+    # set default settings
+    wget https://raw.githubusercontent.com/panticz/scripts/master/pako.sh -O - | bash -
+}
+
 function configure_pakonb() {
 sudo apt-get clean | tee -a ${LOG}
 
