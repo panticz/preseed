@@ -566,6 +566,9 @@ function configure_pawkon() {
     vagrant plugin install vagrant-salt
     vagrant plugin install vagrant-vbox-snapshot
     
+    # remove unnecessary applications
+    apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot
+    
     # TODO: run as user on first login
     # set default settings
     wget https://raw.githubusercontent.com/panticz/scripts/master/pako.sh -O - | bash -
@@ -638,6 +641,9 @@ sudo apt-get install -y curl
 install_docker
 install_lxc
 install_twinkle
+
+# remove unnecessary applications
+apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot
 
 # install mssql driver
 wget http://netcologne.dl.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip -P /tmp/
