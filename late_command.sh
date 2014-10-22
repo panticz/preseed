@@ -634,6 +634,7 @@ sudo apt-get install -y gconf-editor
 sudo apt-get install -y rdesktop
 sudo apt-get install -y libav-tools
 sudo apt-get install -y terminator
+sudo apt-get install -y curl
 install_docker
 install_lxc
 install_twinkle
