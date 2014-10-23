@@ -558,6 +558,7 @@ function configure_pawkon() {
     apt-get install -y git
     apt-get install -y curl
     apt-get install -y terminator
+    apt-get install -y whois
 
     apt-get install -y virtualbox
     apt-get install -y virtualbox-guest-utils
