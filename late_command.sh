@@ -568,7 +568,17 @@ function configure_pawkon() {
     vagrant plugin install vagrant-vbox-snapshot
     
     # remove unnecessary applications
-    apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot
+    apt-get remove -y gnome-sudoku
+    apt-get remove -y gnome-mahjongg
+    apt-get remove -y gnome-mines
+    apt-get remove -y aisleriot
+    apt-get remove -y vino
+    apt-get remove -y cheese
+    apt-get remove -y empathy
+    apt-get remove -y transmission-common
+    apt-get remove -y simple-scan
+    apt-get remove -y shotwell
+    apt-get autoremove -y
     
     # TODO: run as user on first login
     # set default settings
