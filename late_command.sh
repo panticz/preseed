@@ -380,9 +380,12 @@ function install_mysql-admin() {
 function install_develop() {
     install_netbeans
     install_eclipse
-    apt-get install -y openssh-server
     apt-get install -y scite
     install_mysql-admin
+}
+
+function install_ssh-server() {
+    apt-get install -y openssh-server
 }
 
 # install mr
