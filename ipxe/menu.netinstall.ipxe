@@ -10,8 +10,8 @@ menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: ubuntu, password: t00r):
 item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
 item install_ubuntu_14.04_autopart  Ubuntu 14.04 LTS Trusty autopart
-item install_ubuntu_13.10           Ubuntu 13.10 Saucy
-item install_ubuntu_13.10_autopart  Ubuntu 13.10 Saucy autopart
+item install_ubuntu_14.10           Ubuntu 14.10 Utopic
+item install_ubuntu_14.10_autopart  Ubuntu 14.10 Utopic autopart
 item install_ubuntu_12.04           Ubuntu 12.04.3 LTS Precise
 item install_ubuntu_12.04_nonpae    Ubuntu 12.04.3 LTS Precise Non-PAE
 item
@@ -60,13 +60,13 @@ set autopart autopart
 set release trusty
 goto install_ubuntu
 
-:install_ubuntu_13.10
-set release saucy
+:install_ubuntu_14.10
+set release utopic
 goto install_ubuntu
 
-:install_ubuntu_13.10_autopart
+:install_ubuntu_14.10_autopart
 set autopart autopart
-set release saucy
+set release utopic
 goto install_ubuntu
 
 :install_ubuntu_12.04
