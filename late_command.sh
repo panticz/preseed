@@ -393,7 +393,6 @@ function install_mr() {
     install -y openvpn network-manager-openvpn tofrodos imagemagick sshfs patch
     apt-get install -y libreoffice-java-common libreoffice-base libreoffice-officebean
 #err?    install_yajhfc
-    install_epson_business_inkjet 
     install_HP-Laserjet-4050n HP-Laserjet-4050n 192.168.1.18
 
     # install and configure ssh mounts
