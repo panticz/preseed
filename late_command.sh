@@ -399,8 +399,8 @@ function install_mr() {
     wget -q http://dl.panticz.de/mr/install.mrshare.sh -O - | sudo bash -
 
     # configure database source
-    wget -q http://dl.panticz.de/mr/DataAccess.xcu.diff -O /tmp/DataAccess.xcu.diff
-    patch -p2 /usr/lib/openoffice/share/registry/data/org/openoffice/Office/DataAccess.xcu < /tmp/DataAccess.xcu.diff
+    # wget -q http://dl.panticz.de/mr/DataAccess.xcu.diff -O /tmp/DataAccess.xcu.diff
+    # patch -p2 /usr/lib/openoffice/share/registry/data/org/openoffice/Office/DataAccess.xcu < /tmp/DataAccess.xcu.diff
 
     # install nfs
     sudo apt-get install -y nfs-common
