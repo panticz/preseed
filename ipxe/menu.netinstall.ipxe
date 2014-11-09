@@ -12,7 +12,7 @@ item install_ubuntu_14.10           Ubuntu 14.10 Utopic
 item install_ubuntu_14.10_autopart  Ubuntu 14.10 Utopic autopart
 item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
 item install_ubuntu_14.04_autopart  Ubuntu 14.04 LTS Trusty autopart
-item install_ubuntu_14.04_nonpae    Ubuntu 14.04 LTS Trusty (32 bit)
+item install_ubuntu_14.04_forcepae  Ubuntu 14.04 LTS Trusty (32 bit)
 item install_ubuntu_12.04           Ubuntu 12.04.3 LTS Precise
 item
 item --gap NetInstall Debian
@@ -73,7 +73,7 @@ goto install_ubuntu
 set release precise
 goto install_ubuntu
 
-:install_ubuntu_14.04_nonpae
+:install_ubuntu_14.04_forcepae
 set release trusty
 set arch i386
 set options forcepae
