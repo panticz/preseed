@@ -75,7 +75,6 @@ goto install_ubuntu
 
 :install_ubuntu_14.04_nonpae
 set release trusty
-set nonpae non-pae/
 set arch i386
 set options forcepae
 goto install_ubuntu
