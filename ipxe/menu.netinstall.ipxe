@@ -14,7 +14,6 @@ item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
 item install_ubuntu_14.04_autopart  Ubuntu 14.04 LTS Trusty autopart
 item install_ubuntu_14.04_nonpae    Ubuntu 14.04 LTS Trusty (32 bit)
 item install_ubuntu_12.04           Ubuntu 12.04.3 LTS Precise
-item install_ubuntu_12.04_nonpae    Ubuntu 12.04.3 LTS Precise Non-PAE
 item
 item --gap NetInstall Debian
 item install_debian_6_not_preseed   Debian 6 Squeeze
@@ -72,12 +71,6 @@ goto install_ubuntu
 
 :install_ubuntu_12.04
 set release precise
-goto install_ubuntu
-
-:install_ubuntu_12.04_nonpae
-set release precise
-set nonpae non-pae/
-set arch i386
 goto install_ubuntu
 
 :install_ubuntu_14.04_nonpae
