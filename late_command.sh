@@ -254,13 +254,6 @@ function install_gnome_desktop() {
     # fix wait 60 sec for network
     sudo sed -i "s|sleep|#sleep|g" /etc/init/failsafe.conf
 
-    # install "old" nautilus
-#    if [ $(lsb_release -rs | tr -d ".") -ge 1304 ]; then
-#        sudo add-apt-repository -y ppa:webupd8team/experiments
-#        sudo apt-get update -qq
-#        sudo apt-get -y dist-upgrade
-#    fi
-
     # disable screen saver lock
     gsettings set org.gnome.desktop.screensaver lock-enabled false
     gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults/ -t boolean -s /apps/gnome-power-manager/lock_on_blank_screen false
