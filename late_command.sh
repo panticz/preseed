@@ -551,7 +551,7 @@ function install_lxc() {
 }
 
 function install_docker() {
-    apt-get install -y docker.io
+    script4 install.docker.sh
 }
 
 function configure_pawkon() {
