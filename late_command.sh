@@ -402,11 +402,11 @@ function install_mr() {
     mkdir /media/programme /media/bilder /media/lagerliste /media/projekte /media/texte
     
     # create mountpoints
-    sudo echo "srv:/programme          /media/programme      nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv:/bilder             /media/bilder         nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv:/lagerliste         /media/lagerliste     nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv:/projekte           /media/projekte       nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv:/texte              /media/texte          nfs4    _netdev,auto  0  0" >> /etc/fstab
+    sudo echo "srv.mr:/programme          /media/programme      nfs4    _netdev,auto  0  0" >> /etc/fstab
+    sudo echo "srv.mr:/bilder             /media/bilder         nfs4    _netdev,auto  0  0" >> /etc/fstab
+    sudo echo "srv.mr:/lagerliste         /media/lagerliste     nfs4    _netdev,auto  0  0" >> /etc/fstab
+    sudo echo "srv.mr:/projekte           /media/projekte       nfs4    _netdev,auto  0  0" >> /etc/fstab
+    sudo echo "srv.mr:/texte              /media/texte          nfs4    _netdev,auto  0  0" >> /etc/fstab
 
     # load nfs module on startup
     cat /etc/modules | grep nfs || echo nfs >> /etc/modules
