@@ -497,6 +497,10 @@ function disable_ssh_password_authentication() {
     wget --no-check-certificate https://raw.githubusercontent.com/panticz/scripts/master/disable_ssh_password_authentication.sh -O - | bash -
 }
 
+function disable_boot_splash() {
+    wget --no-check-certificate https://raw.githubusercontent.com/panticz/scripts/master/disable_boot_splash.sh -O - | bash -
+}
+
 # install
 function install_forms() {
     install_wine
