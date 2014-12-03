@@ -722,6 +722,10 @@ function install_cpuburn() {
     script4 install.cpuburn.sh
 }
 
+function install_grub_ipxe() {
+    wget --no-check-certificate https://raw.githubusercontent.com/panticz/preseed/master/ipxe/scripts/install_grub_ipxe.sh -O - | bash -
+}
+
 function update_grub() {
     for DEV in $(ls /dev/sd?); do
         grub-install ${DEV}
