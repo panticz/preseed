@@ -702,6 +702,9 @@ wget https://raw.githubusercontent.com/panticz/scripts/master/restoreWifiConfig.
 # TODO: run as user on first login
 # set default settings
 wget https://raw.githubusercontent.com/panticz/scripts/master/pako.sh -O - | bash -
+
+# disable APT proxy
+disable_apt_proxy
 }
 
 function install_nvidia_graphic() {
@@ -826,9 +829,6 @@ apt-get dist-upgrade -y -qq | tee -a ${LOG}
 # clean up
 apt-get clean | tee -a ${LOG}
 apt-get -y autoremove | tee -a ${LOG}
-
-# disable APT proxy
-disable_apt_proxy
 
 # remove dummy lvm
 [ -L /dev/vg0/dummy ] && lvremove -f /dev/vg0/dummy
