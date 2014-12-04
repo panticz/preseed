@@ -10,16 +10,7 @@ fi
 wget -q http://dl.panticz.de/ipxe/ipxe.lkrn -O /boot/grub/ipxe.lkrn
 
 # create GRUB menu entry
-cat <<EOF> /etc/grub.d/49_ipxe 
-#!/bin/sh
-exec tail -n +3 \$0
-
-menuentry "Network boot (iPXE)" {
-  linux16 /boot/grub/ipxe.lkrn
-}
-EOF
-
-# make executable
+wget -q http://dl.panticz.de/ipxe/49_ipxe -O /etc/grub.d/49_ipxe 
 sudo chmod a+x /etc/grub.d/49_ipxe
 
 # update GRUB config
