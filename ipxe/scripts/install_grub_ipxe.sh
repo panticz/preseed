@@ -11,7 +11,7 @@ wget -q http://dl.panticz.de/ipxe/ipxe.lkrn -O /boot/grub/ipxe.lkrn
 
 # create GRUB menu entry
 wget -q http://dl.panticz.de/ipxe/49_ipxe -O /etc/grub.d/49_ipxe 
-sudo chmod a+x /etc/grub.d/49_ipxe
+chmod a+x /etc/grub.d/49_ipxe
 
 # update GRUB config
 update-grub
