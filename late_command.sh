@@ -385,6 +385,7 @@ function install_ssh-server() {
 function install_mr() {
     install -y openvpn network-manager-openvpn tofrodos imagemagick sshfs patch
     apt-get install -y libreoffice-java-common libreoffice-base libreoffice-officebean
+    sudo ln -s  /usr/lib/ure/lib/libjpipe.so /usr/lib/
 #err?    install_yajhfc
     install_HP-Laserjet-4050n HP-Laserjet-4050n 192.168.1.18
 
