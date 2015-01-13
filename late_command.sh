@@ -369,6 +369,10 @@ function install_mysql-admin() {
     script4 install.mysql-admin.sh
 }
 
+function install_mysql-workbench() {
+    script4 install.mysql-workbench.sh
+}
+
 # install develop
 function install_develop() {
     install_netbeans
