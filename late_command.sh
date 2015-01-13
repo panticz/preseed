@@ -589,6 +589,8 @@ function configure_pawkon() {
     apt-get remove -y shotwell
     apt-get autoremove -y
     
+    install_mysql-workbench
+    
     # TODO: run as user on first login
     # set default settings
     wget https://raw.githubusercontent.com/panticz/scripts/master/pako.sh -O - | bash -
