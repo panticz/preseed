@@ -8,6 +8,8 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 
 menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: ubuntu, password: t00r):
+item install_ubuntu_15.04           Ubuntu 15.04 Vivid
+item install_ubuntu_15.010_autopart Ubuntu 15.04 Vivid autopart
 item install_ubuntu_14.10           Ubuntu 14.10 Utopic
 item install_ubuntu_14.10_autopart  Ubuntu 14.10 Utopic autopart
 item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
@@ -51,6 +53,15 @@ chain ${mainmenu}
 #
 # Ubuntu
 #
+:install_ubuntu_15.04
+set release vivid
+goto install_ubuntu
+
+:install_ubuntu_15.04_autopart
+set autopart autopart
+set release vivid
+goto install_ubuntu
+
 :install_ubuntu_14.10
 set release utopic
 goto install_ubuntu
