@@ -568,6 +568,7 @@ function configure_pawkon() {
     apt-get install -y terminator
     apt-get install -y whois
     apt-get install -y dnsutils
+    apt-get install -y apg
 
     apt-get install -y virtualbox
     apt-get install -y virtualbox-guest-utils
@@ -660,6 +661,7 @@ sudo apt-get install -y rdesktop
 sudo apt-get install -y libav-tools
 sudo apt-get install -y terminator
 sudo apt-get install -y curl
+sudo apt-get install -y apg
 install_docker
 install_lxc
 install_twinkle
