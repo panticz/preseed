@@ -648,6 +648,7 @@ sudo apt-get install -y dvdbackup
 sudo apt-get install -y nautilus-image-converter
 sudo apt-get install -y gnote
 sudo apt-get install -y isomaster
+sudo apt-get install -y picard
 sudo apt-get install -y hamster-indicator
 sudo apt-get install -y clusterssh
 install_handbrake
