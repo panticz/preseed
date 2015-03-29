@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIST=trusty
+DIST=utopic
 
 mkdir /tmp/iso
 
