@@ -30,7 +30,7 @@ cp /mnt/ipxe.krn /tmp/iso/
 umount /mnt
 
 echo "download isolinux configuration..."
-wget -q http://installit.googlecode.com/hg/preseed/isolinux.cfg -O /tmp/iso/isolinux.cfg
+wget -q --no-check-certificate https://raw.githubusercontent.com/panticz/preseed/master/pxe/isolinux.cfg -O /tmp/iso/isolinux.cfg
 
 # TODO: download background
 # wget http://www.heise.de/ct/motive/image/1485/p800.jpg -O /tmp/iso/background.jpg
