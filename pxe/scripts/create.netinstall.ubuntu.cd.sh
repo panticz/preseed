@@ -37,8 +37,11 @@ wget -q http://installit.googlecode.com/hg/preseed/isolinux.cfg -O /tmp/iso/isol
 # convert -resize 480x640 /tmp/iso/background.jpg /tmp/isobackground.jpg
  
 # TODO: add Ubuntu Live CD to image (DVD only?)
+# wget http://releases.ubuntu.com/14.10/ubuntu-14.10-desktop-amd64.iso -P /tmp/
+# mount /tmp/ubuntu-14.10-desktop-amd64.iso /mnt/ -o loop
 # cp -a /mnt/.disk/ /tmp/iso/
 # cp -a /mnt/casper/ /tmp/iso/
+# umount /mnt
 
 echo "create iso image..."
 mkisofs -q -V "UbuntuNetInstall" -o /tmp/UbuntuNetInstall.iso -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -r -J /tmp/iso
