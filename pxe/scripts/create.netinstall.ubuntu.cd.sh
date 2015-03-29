@@ -23,6 +23,12 @@ echo "download 64bit ${DIST} kernel and initrd..."
 wget -q http://archive.ubuntu.com/ubuntu/dists/${DIST}/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux -O /tmp/iso/linux64
 wget -q http://archive.ubuntu.com/ubuntu/dists/${DIST}/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz -O /tmp/iso/initrd64.gz
 
+echo "download www.panticz.de iPXE boot image..."
+wget http://dl.panticz.de/ipxe/ipxe.iso -P /tmp/
+mount /tmp/ipxe.iso /mnt/ -o loop
+cp /mnt/ipxe.krn /tmp/iso/
+umount /mnt
+
 echo "download isolinux configuration..."
 wget -q http://installit.googlecode.com/hg/preseed/isolinux.cfg -O /tmp/iso/isolinux.cfg
 
