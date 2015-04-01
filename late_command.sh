@@ -710,7 +710,7 @@ echo "blacklist mei_me" | sudo tee /etc/modprobe.d/blacklist-mei_me.conf
 # restore OpenVPN configuration
 wget https://raw.githubusercontent.com/panticz/scripts/master/restoreOpenvpnConfig.sh -O - | bash -
 
-# restore WiFi configuration
+# restore network configuration (nm-applet, vpn)
 wget https://raw.githubusercontent.com/panticz/scripts/master/restoreWifiConfig.sh -O - | bash -
 
 # TODO: run as user on first login
