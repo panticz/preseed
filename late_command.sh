@@ -603,7 +603,7 @@ sudo apt-get clean | tee -a ${LOG}
 # preconfigure fstab
 if [ "${MAC_HASH}" == "6d3df838e151801d54417b65002d923a" ]; then
 #    echo "/dev/mapper/vg0-data    /home                 ext4    defaults      0  2" >> /etc/fstab
-    echo "#/dev/sda4    /home                 ext4    defaults      0  2" >> /etc/fstab
+    echo "/dev/sda4    /home                 ext4    defaults      0  2" >> /etc/fstab
 fi
 
 # fix wifi
