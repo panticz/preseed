@@ -630,6 +630,7 @@ usermod -a -G lpadmin pako
 ###apt-get install -y couturier
 ###apt-get install -y gnomebaker
 ###apt-get install -y telepathy-sofiasip
+sudo apt-get install -y openssh-server
 install_chromium
 install_gimp
 install_hibiscus
