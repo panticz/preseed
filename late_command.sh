@@ -210,6 +210,10 @@ function install_Kyocera_FS-1010() {
     rm /tmp/Kyocera-FS-1010.ppd
 }
 
+function install_thinkfan() {
+    script4 hardware/install.thinkfan.sh
+}
+
 function install_java-jdk() {
     sudo apt-get remove -y openjdk*
     script4 install.java-jdk.sh
@@ -675,6 +679,9 @@ apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot
 wget http://netcologne.dl.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip -P /tmp/
 unzip /tmp/jtds-1.2.5-dist.zip -d /tmp/
 sudo cp /tmp/jtds-1.2.5.jar /usr/share/java/
+
+# hardware
+install_thinkfan
 
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
