@@ -573,6 +573,7 @@ function configure_pawkon() {
     apt-get install -y whois
     apt-get install -y dnsutils
     apt-get install -y apg
+    apt-get install -y libmysql-java
 
     apt-get install -y virtualbox
     apt-get install -y virtualbox-guest-utils
