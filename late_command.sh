@@ -669,6 +669,7 @@ sudo apt-get install -y libav-tools
 sudo apt-get install -y terminator
 sudo apt-get install -y curl
 sudo apt-get install -y apg
+sudo apt-get install -y ibus-gtk
 install_docker
 install_lxc
 install_twinkle
