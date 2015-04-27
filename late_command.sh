@@ -411,11 +411,11 @@ function install_mr() {
     mkdir /media/programme /media/bilder /media/lagerliste /media/projekte /media/texte
     
     # create mountpoints
-    sudo echo "srv.mr:/programme          /media/programme      nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv.mr:/bilder             /media/bilder         nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv.mr:/lagerliste         /media/lagerliste     nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv.mr:/projekte           /media/projekte       nfs4    _netdev,auto  0  0" >> /etc/fstab
-    sudo echo "srv.mr:/texte              /media/texte          nfs4    _netdev,auto  0  0" >> /etc/fstab
+    sudo echo "root@srv.mr:/media/programme     /media/programme    fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
+    sudo echo "root@srv.mr:/media/bilder        /media/bilder       fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
+    sudo echo "root@srv.mr:/media/lagerliste    /media/lagerliste   fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
+    sudo echo "root@srv.mr:/media/projekte      /media/projekte     fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
+    sudo echo "root@srv.mr:/media/texte         /media/texte        fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
 
     # load nfs module on startup
     cat /etc/modules | grep nfs || echo nfs >> /etc/modules
@@ -621,7 +621,7 @@ cat <<EOF>> /etc/fstab
 hs:/hs                  /media/hs             nfs4    _netdev,auto  0  0
 hs:/video               /media/video          nfs4    _netdev,auto  0  0
 tmpfs                   /tmp                  tmpfs   nosuid,size=50% 0  0
-srv:/develop            /media/develop        nfs4    _netdev,auto  0  0
+root@srv.mr:/media/develop      /media/develop      fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0
 EOF
 
 
