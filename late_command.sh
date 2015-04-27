@@ -670,6 +670,7 @@ sudo apt-get install -y terminator
 sudo apt-get install -y curl
 sudo apt-get install -y apg
 sudo apt-get install -y ibus-gtk
+sudo apt-get install -y ecryptfs-utils
 install_docker
 install_lxc
 install_twinkle
