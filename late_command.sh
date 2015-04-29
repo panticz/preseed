@@ -671,6 +671,7 @@ sudo apt-get install -y curl
 sudo apt-get install -y apg
 sudo apt-get install -y ibus-gtk
 sudo apt-get install -y ecryptfs-utils
+sudo apt-get install -y whois
 install_docker
 install_lxc
 install_twinkle
