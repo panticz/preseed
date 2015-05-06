@@ -70,11 +70,9 @@ HOST=$(echo ${MAC} | md5sum | cut -d" " -f1); \
 wget http://preseed.panticz.de/${HOST}.seed -P /tmp > /dev/null; \
 if [ $? -eq 0 ]; then echo http://preseed.panticz.de/${HOST}.seed; fi
 
-#d-i preseed/late_command string \
-#in-target wget http://preseed.panticz.de/late_command.conf -O /etc/init/late_command.conf
-
 d-i preseed/late_command string \
-in-target wget https://raw.github.com/panticz/preseed/master/late_command.conf -O /etc/init/late_command.conf
+in-target wget -q --no-check-certificate https://raw.githubusercontent.com/panticz/preseed/master/late_command.service -O /etc/systemd/system/late_command.service && \
+systemctl enable late_command.service
 
 # Finishing up the installation
 d-i finish-install/reboot_in_progress note
