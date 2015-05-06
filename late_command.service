@@ -1,0 +1,12 @@
+[Unit]
+Description=preseed late_command script
+After=network.target
+
+[Service]
+StandardOutput=tty
+ExecStartPre=/usr/bin/wget -q --no-check-certificate https://raw.githubusercontent.com/panticz/preseed/master/late_command.sh -O /tmp/late_command.sh
+ExecStart=/bin/bash /tmp/late_command.sh
+ExecStartPost=/bin/systemctl disable late_command.service
+
+[Install]
+WantedBy=multi-user.target
