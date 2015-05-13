@@ -1,5 +1,8 @@
 #!/bin/bash
- 
+
+# install requirements
+sudo apt-get install -y build-essential liblzma-dev
+
 # get source
 cd /tmp
 git clone git://git.ipxe.org/ipxe.git
