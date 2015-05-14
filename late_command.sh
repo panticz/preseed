@@ -528,6 +528,10 @@ function install_xbmc() {
     script4 install.xbmc.sh
 }
 
+function install_google-musicmanager() {
+    script4 install.google-musicmanager.sh
+}
+
 function install_gimp() {
     script4 install.gimp.sh
 }
