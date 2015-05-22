@@ -433,18 +433,24 @@ function ubuntu_tuneup() {
     #gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults/ -t boolean -s /desktop/gnome/remote_access/enabled false
 
     # remove apps from autostart
-    mkdir /etc/xdg/autostart/disabled
-    mv /etc/xdg/autostart/bluetooth-applet.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/evolution-alarm-notify.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/gnome-at-session.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/gnome-user-share.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/jockey-gtk.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/libcanberra-login-sound.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/ubuntuone-launch.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/user-dirs-update-gtk.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/vino-server.desktop /etc/xdg/autostart/disabled/
-    mv /etc/xdg/autostart/gwibber.desktop /etc/xdg/autostart/disabled/
-
+    FILES="
+        /etc/xdg/autostart/bluetooth-applet.desktop
+        /etc/xdg/autostart/evolution-alarm-notify.desktop
+        /etc/xdg/autostart/gnome-at-session.desktop
+        /etc/xdg/autostart/gnome-user-share.desktop
+        /etc/xdg/autostart/jockey-gtk.desktop
+        /etc/xdg/autostart/libcanberra-login-sound.desktop
+        /etc/xdg/autostart/ubuntuone-launch.desktop
+        /etc/xdg/autostart/user-dirs-update-gtk.desktop
+        /etc/xdg/autostart/vino-server.desktop
+        /etc/xdg/autostart/gwibber.desktop
+        /etc/xdg/autostart/indicator-bluetooth.desktop
+    "
+    
+    for FILE in ${FILES}; do
+        [ -f ${FILE} ] && sudo mv ${FILE} ${FILE}.disabled
+    done
+    
     # disable services
     update-rc.d -f avahi-daemon remove
     update-rc.d -f bluetooth remove
