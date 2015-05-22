@@ -749,6 +749,10 @@ function addToFuse() {
 
 function enable_auto_update() {
     wget --no-check-certificate https://raw.githubusercontent.com/panticz/scripts/master/enable_auto_update.sh -O - | bash -
+    
+    # disable desktop update notifier
+    FILE=/etc/xdg/autostart/update-notifier.desktop
+    [ -f ${FILE} ] && mv ${FILE} ${FILE}.disabled
 }
 
 function install_ipmitool() {
