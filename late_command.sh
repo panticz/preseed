@@ -273,7 +273,7 @@ function install_gnome_desktop() {
     # sudo apt-get remove -y indicator-me
 
     # remove unnecessary software
-    sudo apt-get remove -y gnome-orca onboard
+    sudo apt-get purge -y gnome-orca onboard vino
     rm /etc/xdg/autostart/orca-autostart.desktop
 
     # oneiric tweaks
