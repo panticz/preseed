@@ -139,8 +139,8 @@ chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/c
 
 install_debian_8_not_preseed
 set release jessie
-initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
-chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux
+initrd http://cdn.debian.net/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
+chain http://cdn.debian.net/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux
 
 :install_debian
 initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
