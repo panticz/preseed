@@ -18,9 +18,9 @@ item install_ubuntu_14.04_forcepae  Ubuntu 14.04 LTS Trusty (32 bit)
 item install_ubuntu_12.04           Ubuntu 12.04.3 LTS Precise
 item
 item --gap NetInstall Debian
-item install_debian_6_not_preseed   Debian 6 Squeeze
 item install_debian_7_not_preseed   Debian 7 Wheezy
 item install_debian_7_backports     Debian 7 Wheezy (wheezy-backports kernel)
+item install_debian_6_not_preseed   Debian 6 Squeeze
 item
 item --gap NetInstall Debian Preseed (user: root, password: t00r):
 item install_debian_8               Debian 8 Jessie (unstable)
