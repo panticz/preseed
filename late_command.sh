@@ -584,6 +584,7 @@ function configure_pawkon() {
     apt-get install -y dnsutils
     apt-get install -y apg
     apt-get install -y libmysql-java
+    apt-get install -y bash-completion
 
     apt-get install -y virtualbox
     apt-get install -y virtualbox-guest-utils
@@ -685,6 +686,7 @@ sudo apt-get install -y whois
 install_docker
 install_lxc
 install_twinkle
+sudo apt-get install -y bash-completion
 
 # remove unnecessary applications
 apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot
