@@ -38,7 +38,7 @@ chain http://preseed.panticz.de/ipxe/menu.netinstall.ipxe
 sanboot --no-describe --drive 0x80
 
 :memtest
-set 209:string ipxe/memtest/mt_420.conf
+set 209:string ipxe/memtest/mt501.conf
 set 210:string http://preseed.panticz.de/
 chain ipxe/pxelinux.0
 #old
