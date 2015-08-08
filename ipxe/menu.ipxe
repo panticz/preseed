@@ -38,7 +38,7 @@ chain http://preseed.panticz.de/ipxe/menu.netinstall.ipxe
 sanboot --no-describe --drive 0x80
 
 :memtest
-chain http://boot.ipxe.org/memtest501.0
+chain http://www.memtest.org/download/5.01/memtest86+-5.01.bin
 
 :hdt
 set 209:string ipxe/hdt/hdt_052.conf
