@@ -38,12 +38,7 @@ chain http://preseed.panticz.de/ipxe/menu.netinstall.ipxe
 sanboot --no-describe --drive 0x80
 
 :memtest
-set 209:string ipxe/memtest/mt501.conf
-set 210:string http://preseed.panticz.de/
-chain ipxe/pxelinux.0
-#old
-#imgfetch http://www.memtest.org/download/beta/500rc1/mt500rc1.iso
-#chain http://preseed.panticz.de/ipxe/memdisk iso
+chain http://boot.ipxe.org/memtest501.0
 
 :hdt
 set 209:string ipxe/hdt/hdt_052.conf
