@@ -55,12 +55,12 @@ chain ${mainmenu}
 # Ubuntu
 #
 :install_ubuntu_15.04
-set release vivid-updates
+set release vivid
 goto install_ubuntu
 
 :install_ubuntu_15.04_autopart
 set autopart autopart
-set release vivid-updates
+set release vivid
 goto install_ubuntu
 
 :install_ubuntu_14.10
