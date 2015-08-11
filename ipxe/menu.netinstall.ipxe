@@ -25,7 +25,7 @@ item install_debian_7_backports     Debian 7 Wheezy (wheezy-backports kernel)
 item install_debian_6_not_preseed   Debian 6 Squeeze
 item
 item --gap NetInstall Debian Preseed (user: root, password: t00r):
-item install_debian_8               Debian 8 Jessie (unstable)
+item install_debian_8               Debian 8 Jessie
 item install_debian_7               Debian 7 Wheezy
 item install_debian_7_autopart      Debian 7 Wheezy autopart
 item install_debian_7_backports_autopart      Debian 7 Wheezy backports autopart
