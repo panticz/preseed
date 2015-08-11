@@ -55,38 +55,38 @@ chain ${mainmenu}
 # Ubuntu
 #
 :install_ubuntu_15.04
-set release vivid
+set release vivid-updates
 goto install_ubuntu
 
 :install_ubuntu_15.04_autopart
 set autopart autopart
-set release vivid
+set release vivid-updates
 goto install_ubuntu
 
 :install_ubuntu_14.10
-set release utopic
+set release utopic-updates
 goto install_ubuntu
 
 :install_ubuntu_14.10_autopart
 set autopart autopart
-set release utopic
+set release utopic-updates
 goto install_ubuntu
 
 :install_ubuntu_14.04
-set release trusty
+set release trusty-updates
 goto install_ubuntu
 
 :install_ubuntu_14.04_autopart
 set autopart autopart
-set release trusty
+set release trusty-updates
 goto install_ubuntu
 
 :install_ubuntu_12.04
-set release precise
+set release precise-updates
 goto install_ubuntu
 
 :install_ubuntu_14.04_forcepae
-set release trusty
+set release trusty-updates
 set arch i386
 set options forcepae
 goto install_ubuntu
