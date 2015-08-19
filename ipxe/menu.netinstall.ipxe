@@ -37,8 +37,8 @@ item install_fedora_20              Fedora 20
 item install_fedora_19              Fedora 19
 item
 item --gap NetInstall CentOS:  
-item install_centos_7.0             CentOS 7.0
-item install_centos_7.0_kickstart   CentOS 7.0 (kickstart)
+item install_centos_7             CentOS 7.1
+item install_centos_7_kickstart   CentOS 7.1 (kickstart)
 item
 item --gap NetInstall Arch Linux:  
 item install_arch_linux             Arch Linux Netboot
@@ -179,13 +179,13 @@ chain http://ftp.uni-kl.de/pub/linux/fedora/linux/releases/${release}/Fedora/x86
 # CentOS
 #
 # TODO: auto 32/64 bit
-:install_centos_7.0
-initrd http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/initrd.img
-chain http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/vmlinuz
+:install_centos_7
+initrd http://mirror.netcologne.de/centos/7.1.1503/os/x86_64/isolinux/initrd.img
+chain http://mirror.netcologne.de/centos/7.1.1503/os/x86_64/isolinux/vmlinuz
 
-:install_centos_7.0_kickstart
-initrd http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/initrd.img
-chain http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/vmlinuz ksdevice=link ks=http://preseed.panticz.de/kickstart/centos7-minimal.cfg
+:install_centos_7_kickstart
+initrd http://mirror.netcologne.de/centos/7.1.1503/os/x86_64/isolinux/initrd.img
+chain http://mirror.netcologne.de/centos/7.1.1503/os/x86_64/isolinux/vmlinuz ksdevice=link ks=http://preseed.panticz.de/kickstart/centos7-minimal.cfg
 
 #
 # Arch Linux
