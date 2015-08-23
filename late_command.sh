@@ -752,6 +752,10 @@ function install_nvidia_graphic() {
     script4 install.nvidia-graphic.sh
 }
 
+function install_amd_graphic() {
+    script4 install.amd-graphic.sh
+}
+
 function addToFuse() {
     USER=$1
 
