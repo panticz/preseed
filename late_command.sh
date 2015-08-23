@@ -268,6 +268,9 @@ function install_gnome_desktop() {
     # todo (set for all user)
     gsettings set com.canonical.indicator.datetime show-day true
     gsettings set com.canonical.indicator.datetime show-date true
+    
+    # configure unity
+    gsettings set com.canonical.Unity always-show-menus true 
 
     # remove indicator-me applet
     # sudo apt-get remove -y indicator-me
