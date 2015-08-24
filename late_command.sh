@@ -686,6 +686,7 @@ sudo apt-get install -y apg
 sudo apt-get install -y ibus-gtk
 sudo apt-get install -y ecryptfs-utils
 sudo apt-get install -y whois
+sudo apt-get install -y network-manager-pptp
 install_docker
 install_lxc
 install_twinkle
