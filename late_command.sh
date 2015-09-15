@@ -747,6 +747,12 @@ wget https://raw.githubusercontent.com/panticz/scripts/master/restoreWifiConfig.
 # set default settings
 wget https://raw.githubusercontent.com/panticz/scripts/master/pako.sh -O - | bash -
 
+# create softlink to LXC files
+mv /var/lib/lxc /var/lib/lxc.$(date -I)
+ln -s /home/var/lib/lxc /var/lib/lxc
+mv /var/cache/lxc /var/cache/lxc.$(date -I)
+ln -s /home/var/cache/lxc /var/cache/lxc
+
 # disable APT proxy
 disable_apt_proxy
 }
