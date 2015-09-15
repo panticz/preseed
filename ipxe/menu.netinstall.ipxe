@@ -124,7 +124,7 @@ set release wheezy
 goto install_debian
 
 :install_debian_8
-set release unstable
+set release jessie
 goto install_debian
 
 :install_debian_6_not_preseed
