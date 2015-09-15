@@ -607,6 +607,8 @@ function configure_pawkon() {
     apt-get remove -y transmission-common
     apt-get remove -y simple-scan
     apt-get remove -y shotwell
+    apt-get remove -y rhythmbox
+    apt-get remove -y totem
     apt-get autoremove -y
     
     install_mysql-workbench
@@ -693,7 +695,7 @@ install_twinkle
 sudo apt-get install -y bash-completion
 
 # remove unnecessary applications
-apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot
+apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot rhythmbox totem
 
 # install mssql driver
 wget http://netcologne.dl.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip -P /tmp/
