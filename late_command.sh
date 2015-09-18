@@ -592,6 +592,7 @@ function configure_pawkon() {
     apt-get install -y virtualbox
     apt-get install -y virtualbox-guest-utils
     apt-get install -y vagrant
+    install_gimp
 
     vagrant plugin install vagrant-salt
     vagrant plugin install vagrant-vbox-snapshot
