@@ -185,7 +185,7 @@ chain http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/vmlinuz
 
 :install_centos_7_kickstart
 initrd http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/initrd.img
-chain http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/vmlinuz ksdevice=link edd=off ks=http://preseed.panticz.de/kickstart/centos7-minimal.cfg
+chain http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/vmlinuz ksdevice=link edd=off ks=http://preseed.panticz.de/kickstart/centos7-minimal.cfg net.ifnames=0 biosdevname=0
 
 #
 # Arch Linux
