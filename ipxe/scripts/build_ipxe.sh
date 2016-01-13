@@ -4,8 +4,7 @@
 sudo apt-get install -y build-essential liblzma-dev
 
 # get source
-cd /tmp
-git clone git://git.ipxe.org/ipxe.git
+git clone git://git.ipxe.org/ipxe.git /tmp/ipxe
  
 # create boot script
 cat <<EOF> /tmp/ipxe/src/boot.ipxe
