@@ -394,7 +394,7 @@ function install_ssh-server() {
 
 # install mr
 function install_mr() {
-    install -y openvpn network-manager-openvpn tofrodos imagemagick sshfs patch
+    install -y network-manager-vpnc tofrodos imagemagick sshfs patch
     apt-get install -y libreoffice-java-common libreoffice-base libreoffice-officebean
     sudo ln -s  /usr/lib/ure/lib/libjpipe.so /usr/lib/
 #err?    install_yajhfc
