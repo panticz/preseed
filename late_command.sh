@@ -423,8 +423,8 @@ function install_mr() {
     # load nfs module on startup
     cat /etc/modules | grep nfs || echo nfs >> /etc/modules
     
-    # install forms
-    install_forms
+    # install wine
+    install_wine
 
     # create gnome menu
     wget -q http://dl.panticz.de/mr/ritter.gnome.menu.sh -O - | sudo bash -
@@ -517,12 +517,6 @@ function disable_ssh_password_authentication() {
 
 function disable_boot_splash() {
     wget --no-check-certificate https://raw.githubusercontent.com/panticz/scripts/master/disable_boot_splash.sh -O - | bash -
-}
-
-# install
-function install_forms() {
-    install_wine
-    wget -q http://dl.panticz.de/mr/install.forms.sh -O - | sudo bash -s $1
 }
 
 function install_umtsmon() {
