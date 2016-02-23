@@ -582,6 +582,7 @@ function configure_pawkon() {
     apt-get install -y apg
     apt-get install -y libmysql-java
     apt-get install -y bash-completion
+    apt-get install -y clusterssh
 
     apt-get install -y virtualbox
     apt-get install -y virtualbox-guest-utils
