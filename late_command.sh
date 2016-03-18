@@ -745,6 +745,9 @@ wget https://raw.githubusercontent.com/panticz/scripts/master/restoreWifiConfig.
 # set default settings
 wget https://raw.githubusercontent.com/panticz/scripts/master/pako.sh -O - | bash -
 
+# disable consistent network device naming 
+disable_biosdevname
+
 # create softlink to LXC files
 mv /var/lib/lxc /var/lib/lxc.$(date -I)
 ln -s /home/var/lib/lxc /var/lib/lxc
