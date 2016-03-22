@@ -593,6 +593,7 @@ function configure_pawkon() {
     apt-get install -y vagrant
     install_gimp
     install_lxc
+    install_ansible
 
     vagrant plugin install vagrant-salt
     vagrant plugin install vagrant-vbox-snapshot
@@ -693,6 +694,7 @@ sudo apt-get install -y network-manager-pptp network-manager-openvpn
 suod apt-get install -y intel-microcode
 install_docker
 install_lxc
+install_ansible
 install_twinkle
 sudo apt-get install -y bash-completion
 
