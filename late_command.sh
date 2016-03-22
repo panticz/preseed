@@ -567,6 +567,10 @@ function install_lxc() {
     script4 install.lxc.sh
 }
 
+function install_ansible() {
+    script4 install.ansible.sh
+}
+
 function install_docker() {
     script4 install.docker.sh
 }
