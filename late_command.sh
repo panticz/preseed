@@ -587,6 +587,8 @@ function configure_pawkon() {
     apt-get install -y libmysql-java
     apt-get install -y bash-completion
     apt-get install -y clusterssh
+    apt-get install -y tree
+    apt-get install -y telnet
 
     apt-get install -y virtualbox
     apt-get install -y virtualbox-guest-utils
@@ -675,6 +677,8 @@ sudo apt-get install -y isomaster
 sudo apt-get install -y picard
 sudo apt-get install -y hamster-indicator
 sudo apt-get install -y clusterssh
+sudo apt-get install -y tree
+sudo apt-get install -y telnet
 install_handbrake
 sudo apt-get install -y git
 sudo apt-get install -y meld
