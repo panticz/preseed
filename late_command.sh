@@ -309,6 +309,7 @@ function install_desktop_extras() {
     install_ubuntu-restricted-extras
     install_thunderbird
     install_firefox
+    install_chromium
 # dep # install_java-jre
     install_libreoffice
     install_teamviewer_qs
