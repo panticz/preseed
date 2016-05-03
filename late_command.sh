@@ -311,7 +311,7 @@ function install_desktop_extras() {
     install_firefox
 # dep # install_java-jre
     install_libreoffice
-    install_teamviewer
+    install_teamviewer_qs
     install_vlc
     apt-get install -y p7zip
 
@@ -480,6 +480,10 @@ function ubuntu_tuneup_extreme() {
 # install teamviewer
 function install_teamviewer() {
     script4 install.teamviewer.sh
+}
+
+function install_teamviewer_qs() {
+    script4 install.teamviewer_qs.sh
 }
 
 # install spotify
