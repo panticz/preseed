@@ -72,12 +72,12 @@ if [ $? -eq 0 ]; then echo http://preseed.panticz.de/${HOST}.seed; fi
 
 # configure post-install script
 d-i preseed/late_command string \
-    if [ $(in-target test -f /bin/systemctl; echo $?) -eq 0 ]; then \
+#    if [ $(in-target test -f /bin/systemctl; echo $?) -eq 0 ]; then \
         in-target wget -q --no-check-certificate https://raw.githubusercontent.com/panticz/preseed/master/late_command.service -O /etc/systemd/system/late_command.service && \
-        in-target /bin/systemctl enable late_command.service ;\
-    else \
-        in-target wget -q --no-check-certificate https://raw.githubusercontent.com/panticz/preseed/master/late_command.conf -O /etc/init/late_command.conf ;\
-    fi
+        in-target /bin/systemctl enable late_command.service ;
+#    else \
+#        in-target wget -q --no-check-certificate https://raw.githubusercontent.com/panticz/preseed/master/late_command.conf -O /etc/init/late_command.conf ;\
+#    fi
 
 # Finishing up the installation
 d-i finish-install/reboot_in_progress note
