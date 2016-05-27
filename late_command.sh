@@ -699,6 +699,7 @@ sudo apt-get install -y apg
 sudo apt-get install -y ibus-gtk
 sudo apt-get install -y ecryptfs-utils
 sudo apt-get install -y whois
+sudo apt-get install -y dnsutils
 sudo apt-get install -y network-manager-pptp network-manager-openvpn
 suod apt-get install -y intel-microcode
 install_docker
