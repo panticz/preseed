@@ -492,6 +492,11 @@ function install_spotify() {
     script4 install.spotify.sh
 }
 
+# install pipelight
+function install_pipelight() {
+    script4 install.pipelight.sh
+}
+
 # autostart
 function autostart_radio() {
     script4 gnome/enable.autostart.radio.sh $1 $2
