@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[ "$GRUB_FS" == "btrfs" ] && SUBVOL="$(mount | grep " / " | cut -d "=" -f3 | cut -d ")" -f1)"
+
+cat <<EOF
+menuentry "Network boot (iPXE)" {
+    linux16 ${SUBVOL}/boot/grub/ipxe.lkrn
+}
+EOF
