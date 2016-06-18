@@ -252,11 +252,11 @@ function install_gnome_desktop() {
     gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults/ -t string -s /apps/nautilus/preferences/show_directory_item_counts never
 
     # fix network manager, else VPN wont work
-    sudo sed -i 's|managed=false|managed=true|g' /etc/NetworkManager/nm-system-settings.conf
-    sudo sed -i 's|managed=false|managed=true|g' /etc/NetworkManager/NetworkManager.conf
+    #sudo sed -i 's|managed=false|managed=true|g' /etc/NetworkManager/nm-system-settings.conf
+    #sudo sed -i 's|managed=false|managed=true|g' /etc/NetworkManager/NetworkManager.conf
 
     # fix wait 60 sec for network
-    sudo sed -i "s|sleep|#sleep|g" /etc/init/failsafe.conf
+    #sudo sed -i "s|sleep|#sleep|g" /etc/init/failsafe.conf
 
     # disable screen saver lock
     gsettings set org.gnome.desktop.screensaver lock-enabled false
@@ -286,11 +286,11 @@ function install_gnome_desktop() {
     sudo sed -i 's|enabled=1|enabled=0|g' /etc/default/apport
 
     # fix network manager
-    if [ $(lsb_release -rs | tr -d ".") -ge 1310 ]; then
-        sed -i '$ i\service network-manager restart' /etc/rc.local
-    else
-        sed -i '$ i\/etc/init.d/network-manager restart' /etc/rc.local
-    fi
+    #if [ $(lsb_release -rs | tr -d ".") -ge 1310 ]; then
+    #    sed -i '$ i\service network-manager restart' /etc/rc.local
+    #else
+    #    sed -i '$ i\/etc/init.d/network-manager restart' /etc/rc.local
+    #fi
 }
 
 function install_lxdm_desktop() {
