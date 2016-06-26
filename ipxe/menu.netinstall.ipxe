@@ -30,8 +30,7 @@ item install_debian_6               Debian 6 Squeeze
 item install_debian_6_autopart      Debian 6 Squeeze autopart
 item
 item --gap NetInstall Fedora:  
-item install_fedora_20              Fedora 20
-item install_fedora_19              Fedora 19
+item install_fedora_24              Fedora 24
 item
 item --gap NetInstall CentOS:  
 item install_centos_7             CentOS 7.1
@@ -145,17 +144,13 @@ chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/c
 # Fedora
 #
 # TODO: auto 32/64 bit
-:install_fedora_20
-set release 20
-goto install_fedora
-
-:install_fedora_19
-set release 19
+:install_fedora_24
+set release 24
 goto install_fedora
 
 :install_fedora
-initrd http://ftp.uni-kl.de/pub/linux/fedora/linux/releases/${release}/Fedora/x86_64/os/images/pxeboot/initrd.img
-chain http://ftp.uni-kl.de/pub/linux/fedora/linux/releases/${release}/Fedora/x86_64/os/images/pxeboot/vmlinuz inst.repo=http://ftp.uni-kl.de/pub/linux/fedora/linux/releases/${release}/Fedora/x86_64/os/
+initrd http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/images/pxeboot/initrd.img
+chain http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/images/pxeboot//vmlinuz inst.repo=http://ftp.uni-kl.de/pub/linux/fedora/linux/releases/${release}/Fedora/x86_64/os/
 
 
 
