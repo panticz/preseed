@@ -10,8 +10,6 @@ menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: ubuntu, password: t00r):
 item install_ubuntu_16.04           Ubuntu 16.04 Xenial
 item install_ubuntu_16.04_autopart  Ubuntu 16.04 Xenial autopart
-item install_ubuntu_15.10           Ubuntu 15.10 Wily
-item install_ubuntu_15.10_autopart  Ubuntu 15.10 Wily autopart
 item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
 item install_ubuntu_14.04_autopart  Ubuntu 14.04 LTS Trusty autopart
 item install_ubuntu_14.04_forcepae  Ubuntu 14.04 LTS Trusty (32 bit)
@@ -61,15 +59,6 @@ goto install_ubuntu
 :install_ubuntu_16.04_autopart
 set autopart autopart
 set release xenial
-goto install_ubuntu
-
-:install_ubuntu_15.10
-set release wily
-goto install_ubuntu
-
-:install_ubuntu_15.10_autopart
-set autopart autopart
-set release wily
 goto install_ubuntu
 
 :install_ubuntu_14.04
