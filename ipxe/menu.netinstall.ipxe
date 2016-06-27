@@ -32,6 +32,7 @@ item install_debian_6_autopart      Debian 6 Squeeze autopart
 item
 item --gap NetInstall Fedora:  
 item install_fedora_24              Fedora 24
+item install_fedora_24_mate         Fedora 24 (mate)
 item
 item --gap NetInstall CentOS:  
 item install_centos_7             CentOS 7.1
@@ -145,9 +146,14 @@ chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/c
 set release 24
 goto install_fedora
 
+:install_fedora_24_mate
+set release 24
+set ks https://pagure.io/fedora-kickstarts/blob/f24/f/fedora-live-mate_compiz.ks
+goto install_fedora
+
 :install_fedora
 initrd http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/images/pxeboot/initrd.img
-chain http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/images/pxeboot//vmlinuz inst.repo=http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/
+chain http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/images/pxeboot//vmlinuz inst.repo=http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/ ks=${ks}
 
 
 
