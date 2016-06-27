@@ -148,7 +148,7 @@ goto install_fedora
 
 :install_fedora_24_mate
 set release 24
-set ks https://pagure.io/fedora-kickstarts/blob/f24/f/fedora-live-mate_compiz.ks
+set ks https://pagure.io/fedora-kickstarts/raw/f24/f/fedora-live-mate_compiz.ks
 goto install_fedora
 
 :install_fedora
