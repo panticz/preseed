@@ -14,4 +14,14 @@ wget -q https://raw.githubusercontent.com/panticz/preseed/master/ipxe/scripts/gr
 chmod a+x /etc/grub.d/49_ipxe
 
 # update GRUB config
-update-grub
+. /etc/os-release
+case ${ID} in
+  fedora)
+    grub2-mkconfig -o /boot/grub2/grub.cfg
+  ;;
+  debian|ubuntu)
+    update-grub
+  ;;
+  *)
+    echo "Distribution not supported. Please upgrade grub configuration manually"
+esac
