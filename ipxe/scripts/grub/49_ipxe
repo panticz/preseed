@@ -1,9 +1,10 @@
 #!/bin/bash
 
 [ "$GRUB_FS" == "btrfs" ] && SUBVOL="$(mount | grep " / " | cut -d "=" -f3 | cut -d ")" -f1)"
+[ -d /boot/grub2 ] && GRUB_DIR=/boot/grub2 || GRUB_DIR=/boot/grub
 
 cat <<EOF
 menuentry "Network boot (iPXE)" {
-    linux16 ${SUBVOL}/boot/grub/ipxe.lkrn
+    linux16 ${SUBVOL}${GRUB_DIR}/ipxe.lkrn
 }
 EOF
