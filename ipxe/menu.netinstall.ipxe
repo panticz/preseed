@@ -47,6 +47,7 @@ item back   < Back to main menu
 choose target && goto ${target}
 
 :back
+isset {mainmenu} || set mainmenu http://preseed.panticz.de/ipxe/menu.ipxe
 chain ${mainmenu}
 
 
