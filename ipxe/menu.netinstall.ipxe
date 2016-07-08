@@ -3,9 +3,6 @@
 # To access this file via http use following redirection:
 # http://preseed.panticz.de/ipxe/menu.netinstall.ipxe
 
-# set fallback for main menu
-isset {mainmenu} || set mainmenu http://preseed.panticz.de/ipxe/menu.ipxe
-
 # choose cpu architecture
 cpuid --ext 29 && set arch amd64 || set arch i386
 
@@ -51,6 +48,7 @@ item back   < Back to main menu
 choose target && goto ${target}
 
 :back
+isset ${mainmenu} || set mainmenu http://preseed.panticz.de/ipxe/menu.ipxe
 chain ${mainmenu}
 
 
