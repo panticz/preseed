@@ -18,6 +18,7 @@ item grml_32_small      Grml 32 2013.02 small LiveCD
 item freedos            FreeDOS 1.1 Base
 item breakin            breakin 3.71
 item boot.iso           Boot ISO file
+item dft                Drive Fitness Test
 item
 item back   < Back to main menu
 choose target && goto ${target}
@@ -79,4 +80,8 @@ chain http://preseed.panticz.de/ipxe/memdisk iso raw
 
 :boot.iso
 imgfetch http://dl.panticz.de/ipxe/boot.iso
+chain http://preseed.panticz.de/ipxe/memdisk iso
+
+:dft
+imgfetch http://www.hgst.com/sites/default/files/downloads/dft32_v416_b00.iso
 chain http://preseed.panticz.de/ipxe/memdisk iso
