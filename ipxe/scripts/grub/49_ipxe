@@ -4,6 +4,6 @@
 
 cat <<EOF
 menuentry "Network boot (iPXE)" {
-    linux16 ${SUBVOL}/ipxe.lkrn
+    linux16 ${SUBVOL}/boot/ipxe.lkrn
 }
 EOF
