@@ -155,7 +155,7 @@ goto install_fedora
 
 :install_fedora
 initrd http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/images/pxeboot/initrd.img
-chain http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/images/pxeboot//vmlinuz inst.repo=http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/ ks=${ks}
+chain http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/images/pxeboot//vmlinuz ksdevice=link inst.repo=http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/${release}/Workstation/x86_64/os/ ks=${ks}
 
 
 
