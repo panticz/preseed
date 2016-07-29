@@ -589,6 +589,7 @@ function configure_pawkon() {
     echo "LABEL=home /home ext4 defaults 0 0" >> /etc/fstab
 
     apt-get install -y git
+    apt-get install -y meld
     apt-get install -y curl
     apt-get install -y terminator
     apt-get install -y whois
