@@ -40,6 +40,7 @@ d-i apt-setup/partner boolean true
 
 # Package selection
 tasksel tasksel/first multiselect ubuntu-standard
+d-i pkgsel/include string wget
 d-i pkgsel/update-policy select unattended-upgrades
 
 # proxy
