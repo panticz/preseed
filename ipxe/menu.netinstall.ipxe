@@ -80,8 +80,8 @@ set options forcepae
 goto install_ubuntu
 
 :install_ubuntu
-initrd ftp://ftp.halifax.rwth-aachen.de/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/ubuntu-installer/${arch}/initrd.gz
-chain ftp://ftp.halifax.rwth-aachen.de/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto=true netcfg/choose_interface=${net0/mac} locale=en_US.UTF-8 priority=critical net.ifnames=0 biosdevname=0 ${autopart} ${options}
+initrd http://ubuntu.mirror.lrz.de/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/ubuntu-installer/${arch}/initrd.gz
+chain http://ubuntu.mirror.lrz.de/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto=true netcfg/choose_interface=${net0/mac} locale=en_US.UTF-8 priority=critical net.ifnames=0 biosdevname=0 ${autopart} ${options}
 
 #
 # Debian
