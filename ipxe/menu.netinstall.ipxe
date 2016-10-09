@@ -56,12 +56,12 @@ chain ${mainmenu}
 # Ubuntu
 #
 :install_ubuntu_16.04
-set release xenial
+set release xenial-updates
 goto install_ubuntu
 
 :install_ubuntu_16.04_autopart
 set autopart autopart
-set release xenial
+set release xenial-updates
 goto install_ubuntu
 
 :install_ubuntu_14.04
