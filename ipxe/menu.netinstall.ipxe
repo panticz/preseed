@@ -80,8 +80,8 @@ set options forcepae
 goto install_ubuntu
 
 :install_ubuntu
-initrd http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/ubuntu-installer/${arch}/initrd.gz
-chain http://de.archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto=true netcfg/choose_interface=${net0/mac} locale=en_US.UTF-8 priority=critical net.ifnames=0 biosdevname=0 ${autopart} ${options}
+initrd http://archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/ubuntu-installer/${arch}/initrd.gz
+chain http://archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/current/images/netboot/ubuntu-installer/${arch}/linux url=http://preseed.panticz.de/preseed/ubuntu-minimal.seed auto=true netcfg/choose_interface=${net0/mac} locale=en_US.UTF-8 priority=critical net.ifnames=0 biosdevname=0 ${autopart} ${options}
 
 #
 # Debian
