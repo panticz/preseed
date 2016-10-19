@@ -8,6 +8,7 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 
 menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: ubuntu, password: t00r):
+item install_ubuntu_16.10           Ubuntu 16.10 Yakkety
 item install_ubuntu_16.04           Ubuntu 16.04 LTS Xenial
 item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
 item install_ubuntu_14.04_forcepae  Ubuntu 14.04 LTS Trusty (32 bit)
@@ -55,6 +56,10 @@ chain ${mainmenu}
 #
 # Ubuntu
 #
+:item install_ubuntu_16.10
+set release yakkety
+goto install_ubuntu
+
 :install_ubuntu_16.04
 set release xenial
 goto install_ubuntu
