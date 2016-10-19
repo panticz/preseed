@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ "$GRUB_FS" == "btrfs" ] && SUBVOL="$(mount | grep " / " | cut -d "=" -f3 | cut -d ")" -f1)"
+[ "$GRUB_FS" == "btrfs" ] && SUBVOL="$(mount | grep " / " | cut -d "=" -f3 | cut -d ")" -f1)" || SUBVOL="/boot"
 
 cat <<EOF
 menuentry "Network boot (iPXE)" {
