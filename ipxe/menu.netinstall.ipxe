@@ -56,7 +56,7 @@ chain ${mainmenu}
 #
 # Ubuntu
 #
-:item install_ubuntu_16.10
+:install_ubuntu_16.10
 set release yakkety
 goto install_ubuntu
 
