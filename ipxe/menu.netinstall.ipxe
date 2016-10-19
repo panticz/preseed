@@ -32,8 +32,8 @@ item install_debian_6               Debian 6 Squeeze
 item install_debian_6_autopart      Debian 6 Squeeze autopart
 item
 item --gap NetInstall Fedora:  
-item install_fedora_24              Fedora 24
-item install_fedora_24_kickstart    Fedora 24 (kickstart)
+item install_fedora_25              Fedora 25
+item install_fedora_25_kickstart    Fedora 25 (kickstart)
 item
 item --gap NetInstall CentOS:  
 item install_centos_7             CentOS 7.1
@@ -148,13 +148,12 @@ chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/c
 #
 # Fedora
 #
-# TODO: auto 32/64 bit
-:install_fedora_24
-set release 24
+:install_fedora_25
+set release 25
 goto install_fedora
 
-:install_fedora_24_kickstart
-set release 24
+:install_fedora_25_kickstart
+set release 25
 set ks http://preseed.panticz.de/ks/fedora-minimal.ks
 goto install_fedora
 
