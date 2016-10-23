@@ -196,18 +196,22 @@ function install_epson_business_inkjet() {
     # lpoptions -p EpsonColor -o MediaType=PLAIN -o PageSize=A5
 }
         
-function install_Kyocera_FS-1010() {
-    PRINTER_NAME=$1
-    PRINTER_IP=$2
-    
-    # check parameter
-    [ -z ${PRINTER_NAME} ] && PRINTER_NAME=Kyocera-FS-1010
-    [ -z ${PRINTER_IP} ] && PRINTER_IP=kyocera
-    
+function install_printer_kyocera() {
+    # configure parameter
+    PRINTER_NAME=${1:-Kyocera-Printer}
+    PRINTER_IP=${2:-192.168.1.1}
+    PRINTER_PPD=${3:-"/tmp/PPD's_KSL_8.4/English/Kyocera_FS-1030_en.ppd"}
+
+    # download driver from kyocera homepage
+    wget -q http://www.kyoceramita.de/dlc/de/driver/all/linux_ppd_s_ksl_8.-downloadcenteritem-Single-File.downloadcenteritem.tmp/Linux_PPDs_KSL8_4.zip -P /tmp/
+    unzip /tmp/Linux_PPDs_KSL8_4.zip -d /tmp
+
     # create printer
-    wget -q http://dl.panticz.de/hardware/kyocera_fs-1010/Kyocera-FS-1010.ppd -O /tmp/Kyocera-FS-1010.ppd
-    sudo lpadmin -p ${PRINTER_NAME} -v socket://${PRINTER_IP}:9100 -E -P /tmp/Kyocera-FS-1010.ppd
-    rm /tmp/Kyocera-FS-1010.ppd
+    sudo lpadmin -p "${PRINTER_NAME}" -v "socket://${PRINTER_IP}:9100" -E -P "${PRINTER_PPD}"
+
+    # clean up
+    rm /tmp/Linux_PPDs_KSL8_4.zip
+    rm -r /tmp/PPD*_KSL_8.4
 }
 
 function install_thinkfan() {
@@ -727,7 +731,7 @@ install_thinkfan
 
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
-install_Kyocera_FS-1010 Kyocera-FS-1010 192.168.2.1
+install_printer_kyocera Kyocera-FS-1030D-NET nas.fritz.box
 install_Canon-LBP 172.29.12.116
 
 # set default printer
