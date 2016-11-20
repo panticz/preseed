@@ -419,9 +419,9 @@ function install_mr() {
     mkdir /media/programme /media/bilder /media/lagerliste /media/projekte /media/texte
     
     # create mountpoints
-    sudo echo "root@srv.mr:/media/programme     /media/programme    fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
+    #sudo echo "root@srv.mr:/media/programme     /media/programme    fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
     sudo echo "root@srv.mr:/media/bilder        /media/bilder       fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
-    sudo echo "root@srv.mr:/media/lagerliste    /media/lagerliste   fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
+    #sudo echo "root@srv.mr:/media/lagerliste    /media/lagerliste   fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
     sudo echo "root@srv.mr:/media/projekte      /media/projekte     fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
     sudo echo "root@srv.mr:/media/texte         /media/texte        fuse.sshfs  _netdev,delay_connect,noauto,user,idmap=user,transform_symlinks,allow_other,default_permissions 0 0" >> /etc/fstab
 
