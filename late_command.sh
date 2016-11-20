@@ -352,7 +352,6 @@ function install_libreoffice() {
 
 # install multimedia
 function install_multimedia() {
-    install_skype
     install_dvd
     # install gbrainy
     install_vlc
