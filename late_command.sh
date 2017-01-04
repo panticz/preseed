@@ -609,6 +609,7 @@ function configure_pawkon() {
     apt-get install -y virtualbox
     apt-get install -y virtualbox-guest-utils
     apt-get install -y vagrant
+    apt-get install -y keepassx
     install_gimp
     install_lxc
     install_ansible
