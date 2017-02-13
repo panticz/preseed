@@ -716,6 +716,7 @@ sudo apt-get install -y network-manager-pptp network-manager-openvpn
 sudo apt-get install -y intel-microcode
 sudo apt-get install -y pluma
 sudo apt-get install -y caja
+sudo apt-get install -y pbzip2
 install_docker
 install_lxc
 install_ansible
