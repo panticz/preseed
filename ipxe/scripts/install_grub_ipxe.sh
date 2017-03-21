@@ -16,7 +16,7 @@ chmod a+x /etc/grub.d/49_ipxe
 # update GRUB config
 . /etc/os-release
 case ${ID} in
-  fedora)
+  centos|fedora)
     grub2-mkconfig -o /boot/grub2/grub.cfg
   ;;
   debian|ubuntu)
