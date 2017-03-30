@@ -398,7 +398,7 @@ function install_ssh-server() {
 
 # install mr
 function install_mr() {
-    install -y network-manager-vpnc tofrodos imagemagick sshfs patch
+    install -y network-manager-vpnc network-manager-vpnc-gnome tofrodos imagemagick sshfs patch
     apt-get install -y libreoffice-java-common libreoffice-base libreoffice-officebean
     sudo ln -s  /usr/lib/ure/lib/libjpipe.so /usr/lib/
 #err?    install_yajhfc
@@ -712,7 +712,7 @@ sudo apt-get install -y ibus-gtk
 sudo apt-get install -y ecryptfs-utils
 sudo apt-get install -y whois
 sudo apt-get install -y dnsutils
-sudo apt-get install -y network-manager-pptp network-manager-openvpn
+sudo apt-get install -y network-manager-pptp network-manager-pptp-gnome network-manager-openvpn network-manager-openvpn-gnome
 sudo apt-get install -y intel-microcode
 sudo apt-get install -y pluma
 sudo apt-get install -y caja
