@@ -717,6 +717,7 @@ sudo apt-get install -y intel-microcode
 sudo apt-get install -y pluma
 sudo apt-get install -y caja
 sudo apt-get install -y pbzip2
+sudo apt-get install -y unrar-free
 install_docker
 install_lxc
 install_ansible
