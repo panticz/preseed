@@ -723,6 +723,7 @@ install_lxc
 install_ansible
 install_twinkle
 sudo apt-get install -y bash-completion
+sudo apt-get install -y bwm-ng
 
 # remove unnecessary applications
 apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot rhythmbox totem
