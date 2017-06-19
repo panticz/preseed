@@ -734,7 +734,7 @@ unzip /tmp/jtds-1.2.5-dist.zip -d /tmp/
 sudo cp /tmp/jtds-1.2.5.jar /usr/share/java/
 
 # hardware
-install_thinkfan
+# install_thinkfan
 
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
