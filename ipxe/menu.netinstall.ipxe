@@ -13,6 +13,7 @@ item install_ubuntu_16.10           Ubuntu 16.10 Yakkety
 item install_ubuntu_16.04           Ubuntu 16.04 LTS Xenial
 item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
 item install_ubuntu_14.04_forcepae  Ubuntu 14.04 LTS Trusty (32 bit)
+item install_ubuntu_12.04           Ubuntu 12.04 LTS Precise
 item
 item --gap NetInstall Ubuntu Preseed autopart (ALL DATA WIL BY REMOVED!) (user: ubuntu, password: t00r):
 item install_ubuntu_16.04_autopart  Ubuntu 16.04 LTS Xenial autopart
@@ -87,6 +88,10 @@ goto install_ubuntu
 set release trusty-updates
 set arch i386
 set options forcepae
+goto install_ubuntu
+
+:install_ubuntu_12.04		
+set release precise-updates		
 goto install_ubuntu
 
 :install_ubuntu
