@@ -610,6 +610,7 @@ function configure_pawkon() {
     apt-get install -y virtualbox-guest-utils
     apt-get install -y vagrant
     apt-get install -y keepassx
+    apt-get install -y rsnapshot
     install_gimp
     install_lxc
     install_ansible
@@ -719,6 +720,7 @@ sudo apt-get install -y caja
 sudo apt-get install -y pbzip2
 sudo apt-get install -y unrar-free
 sudo apt-get install -y arandr
+sudo apt-get install -y rsnapshot
 install_docker
 install_lxc
 install_ansible
