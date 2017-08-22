@@ -721,6 +721,7 @@ sudo apt-get install -y pbzip2
 sudo apt-get install -y unrar-free
 sudo apt-get install -y arandr
 sudo apt-get install -y rsnapshot
+sudo apt-get install -y keepassx
 install_docker
 install_lxc
 install_ansible
