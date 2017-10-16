@@ -614,6 +614,7 @@ function configure_pawkon() {
     install_gimp
     install_lxc
     install_ansible
+    install_projectlibre
 
     vagrant plugin install vagrant-salt
     vagrant plugin install vagrant-vbox-snapshot
@@ -820,6 +821,10 @@ function enable_auto_update() {
 
 function install_ipmitool() {
     script4 install.ipmitool.sh
+}
+
+function install_projectlibre() {
+    script4 install.projectlibre.sh
 }
 
 function install_cpuburn() {
