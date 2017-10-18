@@ -564,6 +564,10 @@ function install_virtualbox() {
     script4 install.virtualbox.sh $1
 }
 
+function install_vmware-player() {
+    script4 install.vmware-player.sh
+}
+
 function install_bcm() {
     script4 dep/install.bcm.sh
 }
@@ -615,6 +619,7 @@ function configure_pawkon() {
     install_lxc
     install_ansible
     install_projectlibre
+    install_vmware-player
 
     vagrant plugin install vagrant-salt
     vagrant plugin install vagrant-vbox-snapshot
