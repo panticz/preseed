@@ -609,10 +609,6 @@ function configure_pawkon() {
     apt-get install -y telnet
     apt-get install -y pluma
     apt-get install -y caja
-
-    apt-get install -y virtualbox
-    apt-get install -y virtualbox-guest-utils
-    apt-get install -y vagrant
     apt-get install -y keepassx
     apt-get install -y rsnapshot
     install_gimp
@@ -620,9 +616,6 @@ function configure_pawkon() {
     install_ansible
     install_projectlibre
     install_vmware-player
-
-    vagrant plugin install vagrant-salt
-    vagrant plugin install vagrant-vbox-snapshot
     
     # remove unnecessary applications
     apt-get remove -y gnome-sudoku
