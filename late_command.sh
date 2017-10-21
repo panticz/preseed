@@ -730,7 +730,19 @@ sudo apt-get install -y bwm-ng
 sudo apt-get install -y csvtool
 
 # remove unnecessary applications
-apt-get remove -y gnome-sudoku gnome-mahjongg gnome-mines aisleriot rhythmbox totem
+apt-get remove -y gnome-sudoku
+apt-get remove -y gnome-mahjongg
+apt-get remove -y gnome-mines
+apt-get remove -y aisleriot
+apt-get remove -y rhythmbox
+apt-get remove -y totem
+apt-get remove -y xterm
+apt-get remove -y xiterm+thai
+apt-get remove -y ubuntu-web-launchers
+apt-get remove -y deja-dup
+apt-get remove -y gnote
+apt-get remove -y yelp
+apt-get remove -y gnome-bluetooth
 
 # install mssql driver
 wget http://netcologne.dl.sourceforge.net/project/jtds/jtds/1.2.5/jtds-1.2.5-dist.zip -P /tmp/
