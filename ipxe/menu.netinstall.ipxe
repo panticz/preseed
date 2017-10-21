@@ -8,6 +8,7 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 
 menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: ubuntu, password: ubuntu):
+item install_ubuntu_17.10           Ubuntu 17.10 Artful
 item install_ubuntu_17.04           Ubuntu 17.04 Zesty
 item install_ubuntu_16.10           Ubuntu 16.10 Yakkety
 item install_ubuntu_16.04           Ubuntu 16.04 LTS Xenial
@@ -58,6 +59,10 @@ chain ${mainmenu}
 #
 # Ubuntu
 #
+:install_ubuntu_17.10
+set release artful
+goto install_ubuntu
+
 :install_ubuntu_17.04
 set release zesty
 goto install_ubuntu
