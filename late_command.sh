@@ -728,6 +728,8 @@ install_twinkle
 sudo apt-get install -y bash-completion
 sudo apt-get install -y bwm-ng
 sudo apt-get install -y csvtool
+sudo apt-get install -y rename
+sudo apt-get install -y mp3val
 
 # remove unnecessary applications
 apt-get remove -y gnome-sudoku
