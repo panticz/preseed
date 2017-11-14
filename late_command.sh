@@ -607,6 +607,7 @@ function configure_pawkon() {
     apt-get install -y clusterssh
     apt-get install -y tree
     apt-get install -y telnet
+    apt-get install -y net-tools
     apt-get install -y pluma
     apt-get install -y caja
     apt-get install -y keepassx
@@ -712,6 +713,7 @@ sudo apt-get install -y ibus-gtk
 sudo apt-get install -y ecryptfs-utils
 sudo apt-get install -y whois
 sudo apt-get install -y dnsutils
+sudo apt-get install -y net-tools
 sudo apt-get install -y network-manager-pptp network-manager-pptp-gnome network-manager-openvpn network-manager-openvpn-gnome
 sudo apt-get install -y intel-microcode
 sudo apt-get install -y pluma
