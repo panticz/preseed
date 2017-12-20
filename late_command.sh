@@ -612,6 +612,7 @@ function configure_pawkon() {
     apt-get install -y caja
     apt-get install -y keepassx
     apt-get install -y rsnapshot
+    apt-get install -y pgadmin3
     install_gimp
     install_lxc
     install_ansible
