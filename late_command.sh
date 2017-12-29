@@ -158,13 +158,6 @@ function install_HP-Officejet-Pro-8500-a910() {
     sudo lpadmin -p HP8500 -v socket://${IP}:9100 -E -P "/tmp/HP-Officejet-Pro-8500-a910.ppd"
 }
 
-function install_Canon-LBP() {
-    IP=$1
-    
-    wget -q http://dl.panticz.de/hardware/canon_lbp/Canon-LBP-5975.ppd -O /tmp/Canon-LBP-5975.ppd
-    sudo lpadmin -p CanonLBP -v socket://${IP}:9100 -E -P "/tmp/Canon-LBP-5975.ppd"
-}
-
 function install_Kyocera-FS-C5016N() {
     # get driver from kyocera homepage
     wget http://www.kyoceramita.de/dlc/de/driver/all/linux_ppd_s_ksl_8.-downloadcenteritem-Single-File.downloadcenteritem.tmp/Linux_PPDs_KSL8_4.zip -P /tmp/
@@ -762,7 +755,6 @@ sudo cp /tmp/jtds-1.2.5.jar /usr/share/java/
 # install printer
 install_HP-Officejet-Pro-8500-a910 192.168.1.15
 install_printer_kyocera Kyocera-FS-1030D-NET nas.fritz.box
-install_Canon-LBP 172.29.12.116
 
 # set default printer
 sudo lpoptions -d HP-Laserjet-4050n
