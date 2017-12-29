@@ -87,6 +87,10 @@ function install_hibiscus() {
     script4 install.hibiscus.sh
 }
 
+function install_atom() {
+    script4 install.atom.sh
+}
+
 function install_dropbox() {
     script4 install.dropbox.sh
 }
@@ -678,6 +682,7 @@ sudo apt-get install -y openssh-server
 install_chromium
 install_gimp
 install_hibiscus
+install_atom
 sudo apt-get install -y filezilla
 sudo apt-get install -y fprint-demo #libfprint0 libpam-fprint
 sudo apt-get install -y libnotify-bin
