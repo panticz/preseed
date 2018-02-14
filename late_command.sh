@@ -610,6 +610,8 @@ function configure_pawkon() {
     apt-get install -y keepassx
     apt-get install -y rsnapshot
     apt-get install -y pgadmin3
+    apt-get install -y traceroute
+    apt-get install -y net-tools
     install_gimp
     install_lxc
     install_ansible
@@ -719,6 +721,8 @@ sudo apt-get install -y unrar-free
 sudo apt-get install -y arandr
 sudo apt-get install -y rsnapshot
 sudo apt-get install -y keepassx
+sudo apt-get install -y traceroute
+sudo apt-get install -y net-tools
 install_docker
 install_lxc
 install_ansible
