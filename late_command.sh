@@ -617,6 +617,7 @@ function configure_pawkon() {
     install_ansible
     install_projectlibre
     install_vmware-player
+    apt-get install -y virt-manager ssh-askpass
     
     # remove unnecessary applications
     apt-get remove -y gnome-sudoku
