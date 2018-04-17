@@ -39,8 +39,8 @@ item install_fedora_25              Fedora 25
 item install_fedora_25_kickstart    Fedora 25 (kickstart)
 item
 item --gap NetInstall CentOS:  
-item install_centos_7             CentOS 7.1
-item install_centos_7_kickstart   CentOS 7.1 (kickstart)
+item install_centos_7             CentOS 7
+item install_centos_7_kickstart   CentOS 7 (kickstart)
 item
 item --gap NetInstall Arch Linux:  
 item install_arch_linux             Arch Linux Netboot
