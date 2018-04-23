@@ -639,6 +639,9 @@ function configure_pawkon() {
     # TODO: run as user on first login
     # set default settings
     wget https://raw.githubusercontent.com/panticz/scripts/master/pako.sh -O - | bash -
+    
+    # allow access to local domain
+    sudo sed -i 's|^#*domain-name=local|domain-name=.xlocal|g' /etc/avahi/avahi-daemon.conf
 }
 
 function configure_pakonb() {
