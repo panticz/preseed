@@ -16,6 +16,7 @@ item install_ubuntu_14.04_forcepae  Ubuntu 14.04 LTS Trusty (32 bit)
 item install_ubuntu_12.04           Ubuntu 12.04 LTS Precise
 item
 item --gap NetInstall Ubuntu Preseed autopart (ALL DATA WIL BY REMOVED!) (user: ubuntu, password: t00r):
+item install_ubuntu_18.04_autopart  Ubuntu 18.04 LTS Bionic autopart
 item install_ubuntu_16.04_autopart  Ubuntu 16.04 LTS Xenial autopart
 item install_ubuntu_14.04_autopart  Ubuntu 14.04 LTS Trusty autopart
 item
@@ -59,6 +60,11 @@ chain ${mainmenu}
 # Ubuntu
 #
 :install_ubuntu_18.04
+set release bionic
+goto install_ubuntu
+
+:install_ubuntu_18.04_autopart
+set autopart autopart
 set release bionic
 goto install_ubuntu
 
