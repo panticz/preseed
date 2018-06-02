@@ -26,6 +26,7 @@ item install_debian_7_backports     Debian 7 Wheezy (wheezy-backports kernel)
 item install_debian_6_not_preseed   Debian 6 Squeeze
 item
 item --gap NetInstall Debian Preseed (user: root, password: t00r):
+item install_debian_9               Debian 9 Stretch
 item install_debian_8               Debian 8 Jessie
 item install_debian_7               Debian 7 Wheezy
 item install_debian_7_autopart      Debian 7 Wheezy autopart
@@ -124,6 +125,10 @@ goto install_debian
 
 :install_debian_8
 set release jessie
+goto install_debian
+
+:install_debian_9
+set release stretch
 goto install_debian
 
 :install_debian_6_not_preseed
