@@ -736,6 +736,7 @@ sudo apt-get install -y bwm-ng
 sudo apt-get install -y csvtool
 sudo apt-get install -y rename
 sudo apt-get install -y mp3val
+sudo apt-get install -y exfat-fuse
 
 # remove unnecessary applications
 apt-get remove -y gnome-sudoku
