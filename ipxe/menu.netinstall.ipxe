@@ -8,6 +8,7 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 
 menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: ubuntu, password: ubuntu):
+item install_ubuntu_19.04           Ubuntu 19.04 Disco
 item install_ubuntu_18.04           Ubuntu 18.04 LTS Bionic
 item install_ubuntu_16.04           Ubuntu 16.04 LTS Xenial
 item install_ubuntu_14.04           Ubuntu 14.04 LTS Trusty
@@ -59,6 +60,10 @@ chain ${mainmenu}
 #
 # Ubuntu
 #
+:install_ubuntu_19.04
+set release disco
+goto install_ubuntu
+
 :install_ubuntu_18.04
 set release bionic
 goto install_ubuntu
