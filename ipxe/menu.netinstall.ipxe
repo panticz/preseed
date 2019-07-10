@@ -17,13 +17,13 @@ item --gap NetInstall Ubuntu Preseed autopart (ALL DATA WIL BY REMOVED!) (user: 
 item install_ubuntu_18.04_autopart  Ubuntu 18.04 LTS Bionic autopart
 item install_ubuntu_16.04_autopart  Ubuntu 16.04 LTS Xenial autopart
 item
-item --gap NetInstall Debian
-item install_debian_8_not_preseed   Debian 8 Jessie
-item
 item --gap NetInstall Debian Preseed (user: root, password: t00r):
 item install_debian_10              Debian 10 Buster
 item install_debian_9               Debian 9 Stretch
 item install_debian_8               Debian 8 Jessie
+item
+item --gap NetInstall Debian (manual installation)
+item install_debian_10_not_preseed   Debian 10 Buster
 item
 item --gap NetInstall Fedora:  
 item install_fedora_25              Fedora 25
@@ -85,24 +85,27 @@ chain http://archive.ubuntu.com/ubuntu/dists/${release}/main/installer-${arch}/c
 #
 :install_debian_10
 set release buster
-goto install_debian
+goto install_debian_preseed
 
-:install_debian_8
-set release jessie
+:install_debian_10_manual
+set release buster
 goto install_debian
 
 :install_debian_9
 set release stretch
-goto install_debian
+goto install_debian_preseed
 
-:install_debian_8_not_preseed
+:install_debian_8
 set release jessie
+goto install_debian_preseed
+
+:install_debian
 initrd http://cdn.debian.net/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
 chain http://cdn.debian.net/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux
 
-:install_debian
-initrd http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
-chain http://ftp2.de.debian.org/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/preseed/debian-minimal.seed auto=true netcfg/choose_interface=${net0/mac} priority=critical ${autopart}
+:install_debian_preseed
+initrd http://cdn.debian.net/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/initrd.gz
+chain http://cdn.debian.net/debian/dists/${release}/main/installer-${arch}/current/images/netboot/debian-installer/${arch}/linux url=http://preseed.panticz.de/preseed/debian-minimal.seed auto=true netcfg/choose_interface=${net0/mac} priority=critical ${autopart}
 
 #
 # Fedora
