@@ -33,9 +33,6 @@ item
 item --gap NetInstall Arch Linux:  
 item install_arch_linux             Arch Linux Netboot
 item
-item --gap Other
-item install_ipfire                 IpFire
-item
 item back   < Back to main menu
 choose target && goto ${target}
 
@@ -133,9 +130,3 @@ chain http://mirror.netcologne.de/centos/7/os/x86_64/isolinux/vmlinuz ksdevice=l
 cpuid --ext 29 && set arch x86_64 || set arch i686
 initrd http://mirror.netcologne.de/archlinux/iso/latest/arch/boot/${arch}/archiso.img
 chain http://mirror.netcologne.de/archlinux/iso/latest/arch/boot/${arch}/vmlinuz autopartarchiso_http_srv=http://mirror.netcologne.de/archlinux/iso/latest/ archisobasedir=arch checksum=y ip=dhcp
-
-#
-# IpFire
-#
-:install_ipfire
-chain http://boot.ipfire.org/menu.gpxe
