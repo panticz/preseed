@@ -8,7 +8,7 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 
 menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: ubuntu, password: ubuntu):
-item install_ubuntu_19.10           Ubuntu 19.10 Eoan
+item install_ubuntu_20.10           Ubuntu 20.10 Groovy
 item install_ubuntu_20.04           Ubuntu 20.04 LTS Focal
 item install_ubuntu_18.04           Ubuntu 18.04 LTS Bionic
 item install_ubuntu_16.04           Ubuntu 16.04 LTS Xenial
@@ -45,8 +45,8 @@ chain ${mainmenu}
 #
 # Ubuntu
 #
-:install_ubuntu_19.10
-set release eoan
+:install_ubuntu_20.10
+set release groovy
 goto install_ubuntu
 
 :install_ubuntu_20.04
