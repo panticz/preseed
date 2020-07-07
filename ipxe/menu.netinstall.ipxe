@@ -9,11 +9,12 @@ cpuid --ext 29 && set arch amd64 || set arch i386
 menu NetInstall
 item --gap NetInstall Ubuntu Preseed (user: ubuntu, password: ubuntu):
 item install_ubuntu_19.10           Ubuntu 19.10 Eoan
-item install_ubuntu_19.04           Ubuntu 19.04 Disco
+item install_ubuntu_20.04           Ubuntu 20.04 LTS Focal
 item install_ubuntu_18.04           Ubuntu 18.04 LTS Bionic
 item install_ubuntu_16.04           Ubuntu 16.04 LTS Xenial
 item
 item --gap NetInstall Ubuntu Preseed autopart (ALL DATA WIL BY REMOVED!) (user: ubuntu, password: t00r):
+item install_ubuntu_20.04_autopart  Ubuntu 20.04 LTS Focal autopart
 item install_ubuntu_18.04_autopart  Ubuntu 18.04 LTS Bionic autopart
 item install_ubuntu_16.04_autopart  Ubuntu 16.04 LTS Xenial autopart
 item
@@ -48,8 +49,13 @@ chain ${mainmenu}
 set release eoan
 goto install_ubuntu
 
-:install_ubuntu_19.04
-set release disco
+:install_ubuntu_20.04
+set release focal
+goto install_ubuntu
+
+:install_ubuntu_20.04_autopart
+set autopart autopart
+set release focal
 goto install_ubuntu
 
 :install_ubuntu_18.04
